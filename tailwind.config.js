@@ -15,6 +15,7 @@ export default {
       },
       boxShadow: {
         1: "0px 2px 6px 0px rgba(208, 208, 208, 0.25)",
+        2: "0px 4px 20px 0px rgba(104, 104, 104, 0.25)"
       },
       colors: {
         baseline: {

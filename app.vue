@@ -1,440 +1,144 @@
-<script setup>
-//--------------------------------------------------------------------------------------------------------------//
-import {
-  Dialog2LineIcon,
-  FacebookLineIcon,
-  FiltersCircleLineIcon,
-  InstagramLineIcon,
-  LinkedinLineIcon,
-  MapLineIcon,
-  MasksLineIcon,
-  SmileCircleLineIcon,
-  YoutubeLineIcon,
-} from "~/assets/icons";
-//--------------------------------------------------------------------------------------------------------------//
-const home_sections = [
-  {
-    id: 1,
-    direction: "left",
-    src: "/home-section-photo-1.png",
-    alt: "Home Section Photo 1",
-    title: "Bersosial di Dunia Maya Tidak Pernah Seaman Cuit",
-    content:
-      "Bergabung dan berinteraksi dengan pengguna lain yang telah terverifikasi menjadi lebih aman dan meyakinkan. Anda bisa membentuk komunitas yang kredibel versi Anda bersama pengguna lain. Kembangkan potensimu, lebarkan jaringanmu, diantara orang-orang yang kredibel, bersama Cuit.",
-  },
-  {
-    id: 2,
-    direction: "right",
-    src: "/home-section-photo-2.png",
-    alt: "Home Section Photo 2",
-    title: "Verifikasi Pengguna, Menciptakan Lingkungan Dunia Maya Tanpa BOT",
-    content:
-      "Tidak ada lagi akun robot, palsu, ataupun sejenisnya yang tidak bertanggung jawab saat berinteraksi dengan pengguna lain. Lakukan verifikasi untuk mendapatkan lebih banyak keuntungan dari Cuit.",
-  },
-  {
-    id: 3,
-    direction: "left",
-    src: "/home-section-photo-3.png",
-    alt: "Home Section Photo 3",
-    title: "Komunitas Tanpa Batas, Bersama Orang-Orang yang Jelas",
-    content:
-      "Membentuk komunitas bersama sesama pengguna dengan frekuensi yang sama, ketertarikan yang sama, aktifitas yang sama, atau bahkan latar belakang yang sama. Ciptakan momen produktif dan menyenangkan mulai dari Cuit.",
-  },
-  {
-    id: 4,
-    direction: "right",
-    src: "/home-section-photo-4.png",
-    alt: "Home Section Photo 4",
-    title:
-      "Diversifikasi Jenis Akun Anda. Personal, Premium, atau bahkan Brand",
-    content:
-      "Cuit menyediakan fitur bagi banyak pihak, mulai dari pengguna di tingkat personal, pemimpin komunitas, hingga perusahaan dengan brand. Dalam satu lingkungan media sosial yang sama, kerjasama yang saling menguntungkan dapat tercapai.",
-  },
-  {
-    id: 5,
-    direction: "left",
-    src: "/home-section-photo-5.png",
-    alt: "Home Section Photo 5",
-    title:
-      "Apresiasi dengan Creative Badge dari Cuit, Jadikan Diri Anda Berbeda",
-    content:
-      "Creative Badge merupakan bentuk apresiasi terhadap pengguna Cuit, baik dalam lingkaran umum di Cuit, komunitas, ataupun apresiasi dari Brand. Kumpulkan badge untuk profilmu yang lebih berbeda dari pengguna lain.",
-  },
-];
-//--------------------------------------------------------------------------------------------------------------//
-const choose_sections = [
-  {
-    id: 1,
-    illustration_src: "/bird-illustration-1.png",
-    illustration_alt: "Bird Illustration 1",
-    icon: MapLineIcon,
-    title: "Info Daerah",
-    content:
-      "Setiap daerah memiliki pengguna dengan preferensi, ketertarikan, dan keunikan masing-masing. Cari tahu apa yang menjadi trend di suatu daerah melalui Cuit.",
-  },
-  {
-    id: 2,
-    icon: SmileCircleLineIcon,
-    title: "Gratis",
-    content:
-      "Cuit akan selamanya gratis. Kehadiran Anda di platform Cuit adalah kebanggan bagi kami. Melayani kebutuhan Anda dalam berjejaring di sosial media adalah tujuan utama kami. Manfaatkan segala fitur yang kami sediakan tanpa dipungut biaya.",
-  },
-  {
-    id: 3,
-    icon: MasksLineIcon,
-    title: "Anti Bot",
-    content:
-      "Dengan sistem verifikasi yang dimiliki Cuit, tidak akan ada kesempatan bagi pengguna BOT untuk masuk ke dalam lingkungan Cuit. Nikmati pengalaman bermedia sosial dengan penuh rasa aman dan nyaman.",
-  },
-  {
-    id: 4,
-    illustration_src: "/bird-illustration-2.png",
-    illustration_alt: "Bird Illustration 2",
-    icon: FiltersCircleLineIcon,
-    title: "Kolaborasi",
-    content:
-      "Anda bisa membentuk kolaborasi positif dalam bentuk apapun bersama orang-orang di lingkungan Cuit. Berkolaborasilah untuk menjadi warga Indonesia yang lebih kreatif dan berdampak bagi banyak hal.",
-  },
-];
-//--------------------------------------------------------------------------------------------------------------//
-const experience_sections = [
-  {
-    id: 1,
-    src: "/home-experience-avatar-1.png",
-    alt: "Home Experience Avatar 1",
-    content:
-      "Aplikasi yang baik dan mudah sekali digunakan ayoo segera download cuit untuk mendapatkan cerita lainnya",
-    author: "Arsyifah Morkati",
-    username: "@arsyifahmor",
-  },
-  {
-    id: 2,
-    src: "/home-experience-avatar-2.png",
-    alt: "Home Experience Avatar 2",
-    content:
-      "Aplikasi debest banget yang beda dari yang lain harus banget diapresiasi.",
-    author: "Agung Birganjaya",
-    username: "@agungbirgan",
-  },
-  {
-    id: 3,
-    src: "/home-experience-avatar-3.png",
-    alt: "Home Experience Avatar 3",
-    content:
-      "Yook semangat yook let’s go indonesia terbang tinggi untuk aplikasi ini maju terus",
-    author: "Bernada Putri",
-    username: "@bernadaput",
-  },
-];
-//--------------------------------------------------------------------------------------------------------------//
-</script>
-
 <template>
-  <div class="cuit-landing relative font-nunito">
-    <!-- ------------------------------------ START - Navbar ------------------------------------ -->
-    <nav
-      class="fixed inset-0 z-50 flex h-20 w-full items-center bg-white py-7 shadow-1"
-    >
-      <div
-        class="container mx-auto flex w-full max-w-screen-xl items-center justify-between px-20 2xl:px-10"
-      >
-        <!-- Logo -->
-        <a href="/" class="flex basis-1/3 self-start">
-          <img class="h-8 w-auto" src="/cuit-logo.png" />
-        </a>
-
-        <!-- Menu -->
-        <nav class="flex basis-1/3 flex-row items-center justify-center gap-8">
-          <a href="/" class="font-semibold text-baseline-primary"> Beranda </a>
-
-          <a href="/verification"> Verifikasi </a>
-          <a href="/contact"> Kontak </a>
-        </nav>
-
-        <!-- Account -->
-        <nav class="flex basis-1/3 flex-row items-center justify-end gap-3">
-          <a href="/login" class="rounded-lg px-6 py-2 text-baseline-primary">
-            Masuk
-          </a>
-
-          <a
-            href="/register"
-            class="rounded-lg bg-baseline-primary px-6 py-2 text-white"
-          >
-            Daftar
-          </a>
-        </nav>
-      </div>
-    </nav>
-    <!-- ------------------------------------ END - Navbar ------------------------------------ -->
-
-    <!-- ------------------------------------ START - Hero ------------------------------------ -->
-    <section
-      class="mt-20 h-[calc(100vh_-_80px)] overflow-hidden bg-[url('./hero-bg-1.png')] bg-cover bg-left-top pb-8"
-    >
-      <div
-        class="container relative z-10 mx-auto flex h-full w-full max-w-2xl flex-col items-center justify-center gap-6"
-      >
-        <h1 class="text-center text-5xl font-bold leading-snug">
-          Sambut Era Baru Media Sosial dengan CUIT
-        </h1>
-
-        <p class="text-center text-2xl leading-normal text-grey-smooth">
-          Temukan komunitasmu, bagikan sudut pandangmu, dan jadilah bagian dari
-          era baru sosial media di Indonesia!
-        </p>
-
-        <section class="flex flex-row items-center gap-4">
-          <button
-            class="flex flex-row items-center gap-2.5 rounded-xl bg-neutral-950 px-6 py-3.5 text-white transition-colors duration-300 ease-in hover:bg-neutral-700"
-          >
-            <img src="/google-play-logo.png" class="h-9 w-9 flex-shrink-0" />
-
-            <div class="flex flex-col items-start gap-px text-left">
-              <span class="text-xs uppercase text-neutral-300">
-                Dapatkan di
-              </span>
-              <span class="text-xl font-bold">Google Play</span>
-            </div>
-          </button>
-
-          <button
-            class="flex flex-row items-center gap-2.5 rounded-xl bg-neutral-950 px-8 py-3.5 text-white transition-colors duration-300 ease-in hover:bg-neutral-700"
-          >
-            <img src="/apple-logo.png" class="h-9 w-9 flex-shrink-0" />
-
-            <div class="flex flex-col items-start gap-px text-left">
-              <span class="text-xs uppercase text-neutral-300">
-                Download di
-              </span>
-              <span class="text-xl font-bold">App Store</span>
-            </div>
-          </button>
-        </section>
-      </div>
-    </section>
-    <!-- ------------------------------------ END - Hero ------------------------------------ -->
-
-    <!-- ------------------------------------ START - Section ------------------------------------ -->
-    <section v-for="data in home_sections" class="relative py-8">
-      <div
-        class="container mx-auto my-16 flex w-full max-w-screen-xl items-center justify-between px-20 2xl:px-10"
-        :class="data.direction === 'left' ? 'flex-row' : 'flex-row-reverse'"
-      >
-        <figure class="basis-1/2">
-          <img :src="data.src" />
-        </figure>
-
-        <section class="basis-1/2 space-y-4">
-          <h3 class="text-4xl font-extrabold leading-snug">
-            {{ data.title }}
-          </h3>
-
-          <p class="text-lg text-grey-smooth">
-            {{ data.content }}
-          </p>
-        </section>
-      </div>
-    </section>
-    <!-- ------------------------------------ END - Section ------------------------------------ -->
-
-    <!-- ------------------------------------ START - Why Choose Us ------------------------------------ -->
-    <section class="relative py-8">
-      <div
-        class="container mx-auto my-16 w-full max-w-screen-xl px-20 2xl:px-10"
-      >
-        <h3 class="mb-16 text-center text-4xl font-extrabold">Mengapa Cuit?</h3>
-
-        <div class="flex flex-row items-start gap-8">
-          <figure class="relative basis-1/4" v-for="data in choose_sections">
-            <img
-              v-if="data.illustration_src"
-              class="absolute -z-0 h-auto w-full"
-              :class="{ '-top-28': data.id === 1, '-top-36': data.id === 4 }"
-              :src="data.illustration_src"
-              :alt="data.illustration_alt"
-            />
-
-            <div
-              class="border-grey-barrier relative flex min-h-[432px] flex-col items-center rounded-xl border bg-white p-6"
-            >
-              <component
-                :is="data.icon"
-                class="text-grey-secondary-5 mb-10 h-20 w-20"
-              />
-
-              <h5 class="mb-4 text-2xl font-extrabold text-grey-concencrated">
-                {{ data.title }}
-              </h5>
-
-              <p class="text-center text-base text-grey-smooth">
-                {{ data.content }}
-              </p>
-            </div>
-          </figure>
-        </div>
-      </div>
-    </section>
-    <!-- ------------------------------------ END - Why Choose Us ------------------------------------ -->
-
-    <!-- ------------------------------------ START - Experience ------------------------------------ -->
-    <section class="relative my-8 bg-grey-footer py-16">
-      <div
-        class="container mx-auto my-16 w-full max-w-screen-xl px-20 2xl:px-10"
-      >
-        <nav class="space-y-4">
-          <h3 class="text-center text-4xl font-extrabold">
-            Apa yang Pengguna Cuit Rasakan?
-          </h3>
-          <p class="text-center text-lg font-medium text-grey-smooth">
-            Curahan hati para pengguna Cuit
-          </p>
-        </nav>
-
-        <div class="my-7 flex flex-row items-start gap-8">
-          <figure
-            v-for="data in experience_sections"
-            class="border-grey-barrier flex basis-1/3 flex-col items-center rounded-xl border bg-white p-6"
-          >
-            <Dialog2LineIcon class="mb-4 h-6 w-6 self-start text-grey-smooth" />
-
-            <p class="text-grey-black min-h-[120px] text-center">
-              {{ data.content }}
-            </p>
-
-            <img
-              class="mb-4 h-20 w-20 rounded-full"
-              :src="data.src"
-              :alt="data.alt"
-            />
-
-            <h5 class="font-bold text-grey-concencrated">{{ data.author }}</h5>
-            <p class="text-baseline-primary">{{ data.username }}</p>
-          </figure>
-        </div>
-
-        <div class="flex flex-row items-center justify-center gap-1">
-          <button
-            v-for="data in 4"
-            class="h-2 w-2 rounded-full bg-neutral-300 first:bg-baseline-primary"
-          >
-            &nbsp;
-          </button>
-        </div>
-      </div>
-    </section>
-    <!-- ------------------------------------ END - Experience ------------------------------------ -->
-
-    <!-- ------------------------------------ START - Footer ------------------------------------ -->
-    <footer class="relative bg-grey-footer py-20">
-      <div
-        class="container mx-auto flex w-full max-w-screen-xl items-center justify-between px-20 2xl:px-10"
-      >
-        <!-- Brand -->
-        <div class="flex flex-col items-start gap-8">
-          <a href="/">
+  <NuxtLayout>
+    <div class="cuit-landing relative font-nunito">
+      <!-- ------------------------------------ START - Navbar ------------------------------------ -->
+      <nav class="fixed inset-0 z-50 flex h-20 w-full items-center bg-white py-7 shadow-1">
+        <div class="container mx-auto flex w-full max-w-screen-xl items-center justify-between px-20 2xl:px-10">
+          <!-- Logo -->
+          <a href="/" class="flex basis-1/3 self-start">
             <img class="h-8 w-auto" src="/cuit-logo.png" />
           </a>
 
-          <section class="space-y-0.5">
-            <h6 class="font-normal text-grey-smooth">Email :</h6>
-            <p class="text-grey-concencrated">support@cuit.com</p>
-          </section>
+          <!-- Menu -->
+          <nav class="flex basis-1/3 flex-row items-center justify-center gap-8">
+            <a href="/" class="font-semibold text-baseline-primary"> Beranda </a>
 
-          <section class="flex items-center gap-4">
-            <a href="/facebook">
-              <FacebookLineIcon class="h-6 w-6 text-grey-concencrated" />
+            <a href="/verification"> Verifikasi </a>
+            <a href="/contact"> Kontak </a>
+          </nav>
+
+          <!-- Account -->
+          <nav class="flex basis-1/3 flex-row items-center justify-end gap-3">
+            <a href="/login" class="rounded-lg px-6 py-2 text-baseline-primary">
+              Masuk
             </a>
 
-            <a href="/instagram">
-              <InstagramLineIcon class="h-6 w-6 text-grey-concencrated" />
+            <a href="/register" class="rounded-lg bg-baseline-primary px-6 py-2 text-white">
+              Daftar
             </a>
-
-            <a href="/linkedin">
-              <LinkedinLineIcon class="h-6 w-6 text-grey-concencrated" />
-            </a>
-
-            <a href="/youtube">
-              <YoutubeLineIcon class="h-6 w-6 text-grey-concencrated" />
-            </a>
-          </section>
-
-          <p class="pt-8 text-left text-sm font-normal text-grey-concencrated">
-            Copyright 2023. All rights reserved.
-          </p>
+          </nav>
         </div>
+      </nav>
+      <!-- ------------------------------------ END - Navbar ------------------------------------ -->
 
-        <!-- Menu 1 -->
-        <nav class="flex flex-col items-start gap-6">
-          <a href="/" class="font-semibold text-grey-concencrated"> Beranda </a>
+      <!-- ------------------------------------ END - Page ------------------------------------ -->
+      <NuxtPage />
+      <!-- ------------------------------------ END - Page ------------------------------------ -->
 
-          <a href="/verification" class="font-semibold text-grey-concencrated">
-            Verifikasi
-          </a>
+      <!-- ------------------------------------ START - Footer ------------------------------------ -->
+      <footer class="relative bg-grey-footer py-20">
+        <div class="container mx-auto flex w-full max-w-screen-xl items-center justify-between px-20 2xl:px-10">
+          <!-- Brand -->
+          <div class="flex flex-col items-start gap-8">
+            <a href="/">
+              <img class="h-8 w-auto" src="/cuit-logo.png" />
+            </a>
 
-          <a href="/contact-us" class="font-semibold text-grey-concencrated">
-            Hubungi Kami
-          </a>
+            <section class="space-y-0.5">
+              <h6 class="font-normal text-grey-smooth">Email :</h6>
+              <p class="text-grey-concencrated">support@cuit.com</p>
+            </section>
 
-          <a href="/faq" class="font-semibold text-grey-concencrated"> FAQ </a>
-        </nav>
+            <section class="flex items-center gap-4">
+              <a href="/facebook">
+                <FacebookLineIcon class="h-6 w-6 text-grey-concencrated" />
+              </a>
 
-        <!-- Menu 2 -->
-        <nav class="flex flex-col items-start gap-6">
-          <a
-            href="/privacy-policy"
-            class="font-semibold text-grey-concencrated"
-          >
-            Kebijakan Privasi
-          </a>
+              <a href="/instagram">
+                <InstagramLineIcon class="h-6 w-6 text-grey-concencrated" />
+              </a>
 
-          <a href="/term-of-use" class="font-semibold text-grey-concencrated">
-            Ketentuan Penggunaan
-          </a>
+              <a href="/linkedin">
+                <LinkedinLineIcon class="h-6 w-6 text-grey-concencrated" />
+              </a>
 
-          <a href="/career" class="font-semibold text-grey-concencrated">
-            Karir
-          </a>
+              <a href="/youtube">
+                <YoutubeLineIcon class="h-6 w-6 text-grey-concencrated" />
+              </a>
+            </section>
 
-          <a href="/blog" class="font-semibold text-grey-concencrated">
-            Blog
-          </a>
-        </nav>
+            <p class="pt-8 text-left text-sm font-normal text-grey-concencrated">
+              Copyright 2023. All rights reserved.
+            </p>
+          </div>
 
-        <!-- Download -->
-        <nav class="flex flex-col items-start gap-2">
-          <h5 class="pb-2 font-semibold text-grey-concencrated">
-            Unduh Aplikasi Cuit
-          </h5>
+          <!-- Menu 1 -->
+          <nav class="flex flex-col items-start gap-6">
+            <a href="/" class="font-semibold text-grey-concencrated"> Beranda </a>
 
-          <button
-            class="flex flex-row items-center gap-2.5 rounded-xl bg-neutral-950 px-4 py-1.5 text-white transition-colors duration-300 ease-in hover:bg-neutral-700"
-          >
-            <img src="/google-play-logo.png" class="h-7 w-7 flex-shrink-0" />
+            <a href="/verification" class="font-semibold text-grey-concencrated">
+              Verifikasi
+            </a>
 
-            <div class="flex flex-col items-start gap-px text-left">
-              <span class="text-xs uppercase text-neutral-300">
-                Dapatkan di
-              </span>
-              <span class="text-xl font-bold">Google Play</span>
-            </div>
-          </button>
+            <a href="/contact-us" class="font-semibold text-grey-concencrated">
+              Hubungi Kami
+            </a>
 
-          <button
-            class="flex flex-row items-center gap-2.5 rounded-xl bg-neutral-950 px-6 py-1.5 text-white transition-colors duration-300 ease-in hover:bg-neutral-700"
-          >
-            <img src="/apple-logo.png" class="h-7 w-7 flex-shrink-0" />
+            <a href="/faq" class="font-semibold text-grey-concencrated"> FAQ </a>
+          </nav>
 
-            <div class="flex flex-col items-start gap-px text-left">
-              <span class="text-xs uppercase text-neutral-300">
-                Download di
-              </span>
-              <span class="text-xl font-bold">App Store</span>
-            </div>
-          </button>
-        </nav>
-      </div>
-    </footer>
-    <!-- ------------------------------------ END - Footer ------------------------------------ -->
-  </div>
+          <!-- Menu 2 -->
+          <nav class="flex flex-col items-start gap-6">
+            <a href="/privacy-policy" class="font-semibold text-grey-concencrated">
+              Kebijakan Privasi
+            </a>
+
+            <a href="/term-of-use" class="font-semibold text-grey-concencrated">
+              Ketentuan Penggunaan
+            </a>
+
+            <a href="/career" class="font-semibold text-grey-concencrated">
+              Karir
+            </a>
+
+            <a href="/blog" class="font-semibold text-grey-concencrated">
+              Blog
+            </a>
+          </nav>
+
+          <!-- Download -->
+          <nav class="flex flex-col items-start gap-2">
+            <h5 class="pb-2 font-semibold text-grey-concencrated">
+              Unduh Aplikasi Cuit
+            </h5>
+
+            <button
+              class="flex flex-row items-center gap-2.5 rounded-xl bg-neutral-950 px-4 py-1.5 text-white transition-colors duration-300 ease-in hover:bg-neutral-700">
+              <img src="/google-play-logo.png" class="h-7 w-7 flex-shrink-0" />
+
+              <div class="flex flex-col items-start gap-px text-left">
+                <span class="text-xs uppercase text-neutral-300">
+                  Dapatkan di
+                </span>
+                <span class="text-xl font-bold">Google Play</span>
+              </div>
+            </button>
+
+            <button
+              class="flex flex-row items-center gap-2.5 rounded-xl bg-neutral-950 px-6 py-1.5 text-white transition-colors duration-300 ease-in hover:bg-neutral-700">
+              <img src="/apple-logo.png" class="h-7 w-7 flex-shrink-0" />
+
+              <div class="flex flex-col items-start gap-px text-left">
+                <span class="text-xs uppercase text-neutral-300">
+                  Download di
+                </span>
+                <span class="text-xl font-bold">App Store</span>
+              </div>
+            </button>
+          </nav>
+        </div>
+      </footer>
+      <!-- ------------------------------------ END - Footer ------------------------------------ -->
+    </div>
+  </NuxtLayout>
 </template>
