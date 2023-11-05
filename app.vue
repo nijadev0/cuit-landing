@@ -1,20 +1,36 @@
+<script setup>
+import {
+  FacebookLineIcon,
+  InstagramLineIcon,
+  LinkedinLineIcon,
+  YoutubeLineIcon,
+} from "./assets/icons";
+</script>
+
 <template>
   <NuxtLayout>
     <div class="cuit-landing relative font-nunito">
       <!-- ------------------------------------ START - Navbar ------------------------------------ -->
-      <nav class="fixed inset-0 z-50 flex h-20 w-full items-center bg-white py-7 shadow-1">
-        <div class="container mx-auto flex w-full max-w-screen-xl items-center justify-between px-20 2xl:px-10">
+      <nav
+        class="fixed inset-0 z-50 flex h-20 w-full items-center bg-white py-7 shadow-1"
+      >
+        <div
+          class="container mx-auto flex w-full max-w-screen-xl items-center justify-between px-20 2xl:px-10"
+        >
           <!-- Logo -->
-          <a href="/" class="flex basis-1/3 self-start">
+          <NuxtLink to="/" class="flex basis-1/3 self-start">
             <img class="h-8 w-auto" src="/cuit-logo.png" />
-          </a>
+          </NuxtLink>
 
           <!-- Menu -->
-          <nav class="flex basis-1/3 flex-row items-center justify-center gap-8">
-            <a href="/" class="font-semibold text-baseline-primary"> Beranda </a>
+          <nav
+            class="flex basis-1/3 flex-row items-center justify-center gap-8"
+          >
+            <NuxtLink to="/"> Beranda </NuxtLink>
 
-            <a href="/verification"> Verifikasi </a>
-            <a href="/contact"> Kontak </a>
+            <NuxtLink to="/verification"> Verifikasi </NuxtLink>
+
+            <NuxtLink to="/contact"> Kontak </NuxtLink>
           </nav>
 
           <!-- Account -->
@@ -23,7 +39,10 @@
               Masuk
             </a>
 
-            <a href="/register" class="rounded-lg bg-baseline-primary px-6 py-2 text-white">
+            <a
+              href="/register"
+              class="rounded-lg bg-baseline-primary px-6 py-2 text-white"
+            >
               Daftar
             </a>
           </nav>
@@ -37,12 +56,14 @@
 
       <!-- ------------------------------------ START - Footer ------------------------------------ -->
       <footer class="relative bg-grey-footer py-20">
-        <div class="container mx-auto flex w-full max-w-screen-xl items-center justify-between px-20 2xl:px-10">
+        <div
+          class="container mx-auto flex w-full max-w-screen-xl items-center justify-between px-20 2xl:px-10"
+        >
           <!-- Brand -->
           <div class="flex flex-col items-start gap-8">
-            <a href="/">
+            <NuxtLink to="/">
               <img class="h-8 w-auto" src="/cuit-logo.png" />
-            </a>
+            </NuxtLink>
 
             <section class="space-y-0.5">
               <h6 class="font-normal text-grey-smooth">Email :</h6>
@@ -67,16 +88,23 @@
               </a>
             </section>
 
-            <p class="pt-8 text-left text-sm font-normal text-grey-concencrated">
+            <p
+              class="pt-8 text-left text-sm font-normal text-grey-concencrated"
+            >
               Copyright 2023. All rights reserved.
             </p>
           </div>
 
           <!-- Menu 1 -->
           <nav class="flex flex-col items-start gap-6">
-            <a href="/" class="font-semibold text-grey-concencrated"> Beranda </a>
+            <a href="/" class="font-semibold text-grey-concencrated">
+              Beranda
+            </a>
 
-            <a href="/verification" class="font-semibold text-grey-concencrated">
+            <a
+              href="/verification"
+              class="font-semibold text-grey-concencrated"
+            >
               Verifikasi
             </a>
 
@@ -84,12 +112,17 @@
               Hubungi Kami
             </a>
 
-            <a href="/faq" class="font-semibold text-grey-concencrated"> FAQ </a>
+            <a href="/faq" class="font-semibold text-grey-concencrated">
+              FAQ
+            </a>
           </nav>
 
           <!-- Menu 2 -->
           <nav class="flex flex-col items-start gap-6">
-            <a href="/privacy-policy" class="font-semibold text-grey-concencrated">
+            <a
+              href="/privacy-policy"
+              class="font-semibold text-grey-concencrated"
+            >
               Kebijakan Privasi
             </a>
 
@@ -113,7 +146,8 @@
             </h5>
 
             <button
-              class="flex flex-row items-center gap-2.5 rounded-xl bg-neutral-950 px-4 py-1.5 text-white transition-colors duration-300 ease-in hover:bg-neutral-700">
+              class="flex flex-row items-center gap-2.5 rounded-xl bg-neutral-950 px-4 py-1.5 text-white transition-colors duration-300 ease-in hover:bg-neutral-700"
+            >
               <img src="/google-play-logo.png" class="h-7 w-7 flex-shrink-0" />
 
               <div class="flex flex-col items-start gap-px text-left">
@@ -125,7 +159,8 @@
             </button>
 
             <button
-              class="flex flex-row items-center gap-2.5 rounded-xl bg-neutral-950 px-6 py-1.5 text-white transition-colors duration-300 ease-in hover:bg-neutral-700">
+              class="flex flex-row items-center gap-2.5 rounded-xl bg-neutral-950 px-6 py-1.5 text-white transition-colors duration-300 ease-in hover:bg-neutral-700"
+            >
               <img src="/apple-logo.png" class="h-7 w-7 flex-shrink-0" />
 
               <div class="flex flex-col items-start gap-px text-left">
@@ -142,3 +177,10 @@
     </div>
   </NuxtLayout>
 </template>
+
+<style>
+/* exact link will show the primary color for only the exact matching link */
+a.router-link-active.router-link-exact-active {
+  @apply font-semibold text-baseline-primary;
+}
+</style>
