@@ -33,8 +33,11 @@ useHead({
   >
     <form class="w-full max-w-lg space-y-6 rounded-lg bg-white p-14 shadow-2">
       <div class="space-y-2">
-        <p class="text-sm font-medium text-grey-smooth">Nama</p>
+        <label for="name" class="text-sm font-medium text-grey-smooth">
+          Nama
+        </label>
         <input
+          id="name"
           type="text"
           placeholder="Masukkan nama Anda disini"
           class="relative w-full border-b border-neutral-400 p-4 outline-0 focus:border-baseline-primary"
@@ -42,8 +45,11 @@ useHead({
       </div>
 
       <div class="space-y-2">
-        <p class="text-sm font-medium text-grey-smooth">Email</p>
+        <label for="email" class="text-sm font-medium text-grey-smooth"
+          >Email</label
+        >
         <input
+          id="email"
           type="text"
           placeholder="Masukkan email Anda disini"
           class="relative w-full border-b border-neutral-400 p-4 outline-0 focus:border-baseline-primary"
@@ -51,8 +57,11 @@ useHead({
       </div>
 
       <div class="space-y-2">
-        <p class="text-sm font-medium text-grey-smooth">No. Telepon</p>
+        <label for="phone" class="text-sm font-medium text-grey-smooth">
+          No. Telepon
+        </label>
         <input
+          id="phone"
           type="text"
           placeholder="Masukkan no. telepon Anda disini"
           class="relative w-full border-b border-neutral-400 p-4 outline-0 focus:border-baseline-primary"
@@ -60,8 +69,11 @@ useHead({
       </div>
 
       <div class="space-y-2">
-        <p class="text-sm font-medium text-grey-smooth">Pesan</p>
+        <label for="message" class="text-sm font-medium text-grey-smooth">
+          Pesan
+        </label>
         <input
+          id="message"
           type="text"
           placeholder="Masukkan pesan Anda disini"
           class="relative w-full border-b border-neutral-400 p-4 outline-0 focus:border-baseline-primary"
@@ -69,8 +81,11 @@ useHead({
       </div>
 
       <div class="space-y-2">
-        <p class="text-sm font-medium text-grey-smooth">Kota</p>
+        <label for="city" class="text-sm font-medium text-grey-smooth">
+          Kota
+        </label>
         <input
+          id="city"
           type="text"
           placeholder="Masukkan kota Anda disini"
           class="relative w-full border-b border-neutral-400 p-4 outline-0 focus:border-baseline-primary"

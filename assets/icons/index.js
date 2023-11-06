@@ -4,6 +4,7 @@ import FacebookLineIcon from "./FacebookLineIcon.vue";
 import FiltersCircleLineIcon from "./FiltersCircleLineIcon.vue";
 import InstagramLineIcon from "./InstagramLineIcon.vue";
 import LinkedinLineIcon from "./LinkedinLineIcon.vue";
+import ListLineIcon from "./ListLineIcon.vue";
 import MapLineIcon from "./MapLineIcon.vue";
 import MasksLineIcon from "./MasksLineIcon.vue";
 import SmileCircleLineIcon from "./SmileCircleLineIcon.vue";
@@ -17,6 +18,7 @@ export {
   FiltersCircleLineIcon,
   InstagramLineIcon,
   LinkedinLineIcon,
+  ListLineIcon,
   MapLineIcon,
   MasksLineIcon,
   SmileCircleLineIcon,
