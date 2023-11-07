@@ -17,7 +17,7 @@ const closeMobileMenu = () => {
 <template>
   <!-- ------------------------------------ START - Navbar ------------------------------------ -->
   <nav
-    class="fixed inset-0 top-0 z-50 flex h-14 w-full items-center bg-white shadow-1 lg:py-7 xl:h-20"
+    class="fixed inset-0 top-0 z-50 flex h-14 w-full items-center bg-white shadow-1 lg:h-20 lg:py-7"
   >
     <div
       class="container mx-auto flex w-full max-w-screen-xl items-center justify-between px-6 lg:px-20 2xl:px-10"
