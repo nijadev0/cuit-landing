@@ -177,12 +177,15 @@ const experience_sections = [
   <!-- ------------------------------------ END - Hero ------------------------------------ -->
 
   <!-- ------------------------------------ START - Section ------------------------------------ -->
-  <section v-for="data in home_sections" class="relative py-4 lg:py-8">
+  <section
+    v-for="data in home_sections"
+    class="relative py-4 lg:py-8"
+    :class="[data.id === 2 || data.id === 4 ? 'bg-grey-footer' : 'bg-white']"
+  >
     <div
       class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-between gap-8 px-6 py-6 lg:gap-0 lg:px-20 lg:py-16 2xl:px-10"
       :class="[
         data.direction === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse',
-        data.id === 2 || data.id === 4 ? 'bg-grey-footer' : 'bg-white',
       ]"
     >
       <figure class="basis-1/2">
