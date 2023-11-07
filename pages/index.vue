@@ -147,7 +147,7 @@ const experience_sections = [
     <div
       class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6 lg:px-20 2xl:px-10"
     >
-      <h1 class="text-center text-2xl font-bold leading-snug lg:text-5xl">
+      <h1 class="text-center text-2xl font-extrabold leading-snug lg:text-5xl">
         Sambut Era Baru Media Sosial dengan CUIT
       </h1>
 
@@ -175,14 +175,13 @@ const experience_sections = [
   <!-- ------------------------------------ END - Hero ------------------------------------ -->
 
   <!-- ------------------------------------ START - Section ------------------------------------ -->
-  <section
-    v-for="data in home_sections"
-    class="relative py-4 lg:py-8"
-    :class="data.id === 2 || data.id === 4 ? 'bg-grey-footer' : 'bg-white'"
-  >
+  <section v-for="data in home_sections" class="relative py-4 lg:py-8">
     <div
-      class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-between gap-8 px-6 py-8 lg:gap-0 lg:px-20 lg:py-16 2xl:px-10"
-      :class="data.direction === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse'"
+      class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-between gap-8 px-6 py-6 lg:gap-0 lg:px-20 lg:py-16 2xl:px-10"
+      :class="[
+        data.direction === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse',
+        data.id === 2 || data.id === 4 ? 'bg-grey-footer' : 'bg-white',
+      ]"
     >
       <figure class="basis-1/2">
         <NuxtImg
@@ -208,15 +207,15 @@ const experience_sections = [
   <!-- ------------------------------------ START - Why Choose Us ------------------------------------ -->
   <section class="relative py-4 lg:py-8">
     <div
-      class="container mx-auto w-full max-w-screen-xl px-6 py-8 lg:px-20 lg:py-16 2xl:px-10"
+      class="container mx-auto w-full max-w-screen-xl px-6 py-6 lg:px-20 lg:py-16 2xl:px-10"
     >
-      <h3 class="mb-8 text-center text-2xl font-extrabold lg:mb-16 lg:text-4xl">
+      <h3 class="mb-8 text-center text-xl font-extrabold lg:mb-16 lg:text-4xl">
         Mengapa Cuit?
       </h3>
 
       <div class="flex flex-col items-start gap-6 lg:flex-row lg:gap-8">
         <figure class="relative basis-1/4" v-for="data in choose_sections">
-          <img
+          <NuxtImg
             v-if="data.illustration_src"
             class="absolute -z-0 hidden h-auto w-full lg:block"
             :class="{ '-top-28': data.id === 1, '-top-36': data.id === 4 }"
@@ -229,11 +228,11 @@ const experience_sections = [
           >
             <component
               :is="data.icon"
-              class="mb-5 h-20 w-20 text-grey-secondary-5 lg:mb-10"
+              class="mb-5 h-16 w-16 text-grey-secondary-5 lg:mb-10 lg:h-20 lg:w-20"
             />
 
             <h5
-              class="mb-4 text-xl font-extrabold text-grey-concencrated lg:text-2xl"
+              class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-2xl"
             >
               {{ data.title }}
             </h5>
@@ -254,7 +253,7 @@ const experience_sections = [
       class="container mx-auto w-full max-w-screen-xl px-6 py-8 lg:px-20 lg:py-16 2xl:px-10"
     >
       <nav class="space-y-2 lg:space-y-4">
-        <h3 class="text-center text-2xl font-extrabold lg:text-4xl">
+        <h3 class="text-center text-xl font-extrabold lg:text-4xl">
           Apa yang Pengguna Cuit Rasakan?
         </h3>
         <p
@@ -281,8 +280,10 @@ const experience_sections = [
             :alt="data.alt"
           />
 
-          <h5 class="font-bold text-grey-concencrated">{{ data.author }}</h5>
-          <p class="text-baseline-primary">{{ data.username }}</p>
+          <h5 class="text-base font-bold text-grey-concencrated">
+            {{ data.author }}
+          </h5>
+          <p class="text-base text-baseline-primary">{{ data.username }}</p>
         </figure>
       </div>
 

@@ -94,79 +94,80 @@ const verify_step_sections = [
 
 <template>
   <!-- ------------------------------------ START - Hero ------------------------------------ -->
-  <section class="relative mt-20 pb-8">
+  <section class="relative mt-14 pb-4 lg:mt-20 lg:pb-8">
     <NuxtImg
-      class="h-auto w-full object-contain"
-      src="/hero-bg-1.png"
-      alt="Hero Background 1"
+      class="hidden h-auto w-full object-contain lg:block"
+      src="/hero-bg-2.png"
+      alt="Hero Background 2"
     />
+
+    <NuxtImg
+      class="block h-auto w-full object-contain lg:hidden"
+      src="/hero-bg-2-mobile.png"
+      alt="Hero Background 2 Mobile"
+    />
+
     <div
-      class="container absolute left-1/2 top-1/3 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-6"
+      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6"
     >
-      <h1 class="text-center text-5xl font-bold leading-snug">
+      <h1 class="text-center text-2xl font-extrabold leading-snug lg:text-5xl">
         Verifikasi pada Cuit
       </h1>
 
-      <p class="text-center text-2xl leading-normal text-grey-smooth">
+      <p
+        class="text-center text-base font-semibold leading-normal text-grey-smooth lg:text-2xl"
+      >
         Akses fitur Cuit lebih lengkap di tangan Anda hanya dengan sekali proses
         verifikasi. Buka kesempatan baru untuk berkolaborasi dengan tingkat
         kredibilitas yang lebih tinggi.
       </p>
 
-      <section class="flex flex-row items-center gap-4">
-        <button
-          class="flex flex-row items-center gap-2.5 rounded-xl bg-neutral-950 px-6 py-3.5 text-white transition-colors duration-300 ease-in hover:bg-neutral-700"
-        >
-          <img src="/google-play-logo.png" class="h-9 w-9 flex-shrink-0" />
-
-          <div class="flex flex-col items-start gap-px text-left">
-            <span class="text-xs uppercase text-neutral-300">
-              Dapatkan di
-            </span>
-            <span class="text-xl font-bold">Google Play</span>
-          </div>
-        </button>
-
-        <button
-          class="flex flex-row items-center gap-2.5 rounded-xl bg-neutral-950 px-8 py-3.5 text-white transition-colors duration-300 ease-in hover:bg-neutral-700"
-        >
-          <img src="/apple-logo.png" class="h-9 w-9 flex-shrink-0" />
-
-          <div class="flex flex-col items-start gap-px text-left">
-            <span class="text-xs uppercase text-neutral-300">
-              Download di
-            </span>
-            <span class="text-xl font-bold">App Store</span>
-          </div>
-        </button>
+      <section class="flex flex-row items-center justify-center gap-4">
+        <NuxtImg
+          class="h-auto w-28 lg:w-44"
+          src="/download-google-play.png"
+          alt="Download Google Play"
+        />
+        <NuxtImg
+          class="h-auto w-28 lg:w-44"
+          src="/download-app-store.png"
+          alt="Download App Store"
+        />
       </section>
     </div>
   </section>
   <!-- ------------------------------------ END - Hero ------------------------------------ -->
 
   <!-- ------------------------------------ START - Benefit ------------------------------------ -->
-  <section class="relative my-8 py-16">
-    <div class="container mx-auto w-full max-w-screen-xl px-20 2xl:px-10">
-      <nav class="mb-16 space-y-4">
-        <h3 class="text-center text-4xl font-extrabold">
+  <section class="relative my-4 py-8 lg:my-8 lg:py-16">
+    <div
+      class="container mx-auto w-full max-w-screen-xl px-6 lg:px-20 2xl:px-10"
+    >
+      <nav class="mb-8 space-y-4 lg:mb-16">
+        <h3 class="text-center text-xl font-extrabold lg:text-4xl">
           Keuntungan Verifikasi
         </h3>
-        <p class="text-center text-lg font-medium text-grey-smooth">
+
+        <p
+          class="text-center text-base font-medium text-grey-smooth lg:text-lg"
+        >
           Yang akan kamu dapatkan setelah melakukan proses verifikasi:
         </p>
       </nav>
 
-      <div class="flex flex-row items-start gap-8">
+      <div class="flex flex-col items-start gap-6 lg:flex-row lg:gap-8">
         <figure
           v-for="data in benefit_sections"
-          class="flex min-h-[288px] basis-1/3 flex-col items-center justify-start rounded-xl border border-grey-barrier p-6"
+          class="flex basis-1/3 flex-col items-center justify-start rounded-xl border border-grey-barrier p-6 lg:min-h-[288px]"
         >
           <component
             :is="data.icon"
-            class="mb-8 h-20 w-20 text-grey-secondary-5"
+            class="mb-6 h-16 w-16 text-grey-secondary-5 lg:mb-8 lg:h-20 lg:w-20"
           />
 
-          <h5 class="mb-4 text-2xl font-extrabold text-grey-concencrated">
+          <h5
+            class="mb-2 text-lg font-extrabold text-grey-concencrated lg:mb-4 lg:text-2xl"
+          >
             {{ data.title }}
           </h5>
 
@@ -180,12 +181,16 @@ const verify_step_sections = [
   <!-- ------------------------------------ END - Benefit ------------------------------------ -->
 
   <!-- ------------------------------------ START - Section ------------------------------------ -->
-  <section class="relative my-8 py-16">
-    <nav class="mb-16 flex flex-col items-center justify-center gap-4">
-      <h3 class="text-center text-4xl font-extrabold">
+  <section class="relative my-4 py-8 lg:my-8 lg:py-16">
+    <nav
+      class="mb-12 flex flex-col items-center justify-center gap-4 px-6 lg:mb-16"
+    >
+      <h3 class="text-center text-xl font-extrabold lg:text-4xl">
         Macam-Macam Verifikasi di Cuit
       </h3>
-      <p class="max-w-3xl text-center text-lg font-medium text-grey-smooth">
+      <p
+        class="max-w-3xl text-center text-base font-medium text-grey-smooth lg:text-lg"
+      >
         Cuit menyediakan sistem verifikasi yang berbeda untuk jenis akun yang
         berbeda seperti akun personal, akun premium, serta akun brand
       </p>
@@ -193,12 +198,16 @@ const verify_step_sections = [
 
     <section
       v-for="data in verification_type_section"
-      class="relative py-8"
-      :class="data.id === 2 ? 'bg-white' : 'bg-grey-footer'"
+      class="relative py-4 lg:py-8"
     >
       <div
-        class="container mx-auto my-16 flex w-full max-w-screen-xl items-center justify-between px-20 2xl:px-10"
-        :class="data.direction === 'left' ? 'flex-row' : 'flex-row-reverse'"
+        class="container mx-auto flex w-full max-w-screen-xl items-center justify-between gap-8 px-6 py-6 lg:gap-0 lg:px-20 lg:py-16 2xl:px-10"
+        :class="[
+          data.direction === 'left'
+            ? 'flex-col lg:flex-row'
+            : 'flex-col lg:flex-row-reverse',
+          data.id === 2 ? 'bg-white' : 'bg-grey-footer',
+        ]"
       >
         <figure class="basis-1/2">
           <NuxtImg
@@ -208,12 +217,12 @@ const verify_step_sections = [
           />
         </figure>
 
-        <section class="basis-1/2 space-y-4">
-          <h3 class="text-4xl font-extrabold leading-snug">
+        <section class="basis-1/2 space-y-2 lg:space-y-4">
+          <h3 class="text-xl font-extrabold leading-snug lg:text-4xl">
             {{ data.title }}
           </h3>
 
-          <p class="text-lg text-grey-smooth">
+          <p class="text-base text-grey-smooth lg:text-lg">
             {{ data.content }}
           </p>
         </section>
@@ -223,30 +232,37 @@ const verify_step_sections = [
   <!-- ------------------------------------ START - Section ------------------------------------ -->
 
   <!-- ------------------------------------ START - Step Verification ------------------------------------ -->
-  <section class="relative my-8 py-16">
-    <div class="container mx-auto w-full max-w-screen-xl px-20 2xl:px-10">
-      <nav class="mb-16 flex flex-col items-center justify-center gap-4">
-        <h3 class="text-center text-4xl font-extrabold">
-          Macam-Macam Verifikasi di Cuit
+  <section class="relative my-4 py-8 lg:my-8 lg:py-16">
+    <div
+      class="container mx-auto w-full max-w-screen-xl px-6 lg:px-20 2xl:px-10"
+    >
+      <nav
+        class="mb-8 flex flex-col items-center justify-center gap-4 lg:mb-16"
+      >
+        <h3 class="text-center text-xl font-extrabold lg:text-4xl">
+          Langkah Proses Verifikasi
         </h3>
-        <p class="max-w-3xl text-center text-lg font-medium text-grey-smooth">
-          Cuit menyediakan sistem verifikasi yang berbeda untuk jenis akun yang
-          berbeda seperti akun personal, akun premium, serta akun brand
+        <p
+          class="max-w-3xl text-center text-base font-medium text-grey-smooth lg:text-lg"
+        >
+          Langkah singkat dan sederhana proses Verifikasi
         </p>
       </nav>
 
-      <div class="flex flex-row items-start gap-8">
+      <div class="flex flex-col items-start gap-6 lg:flex-row lg:gap-8">
         <figure
           v-for="data in verify_step_sections"
           class="flex basis-1/3 flex-col items-center justify-start rounded-xl border border-grey-barrier p-6"
         >
           <NuxtImg
-            class="mb-10 h-auto w-64 object-contain"
+            class="mb-10 h-auto w-56 object-contain lg:w-64"
             :src="data.src"
             :alt="data.alt"
           />
 
-          <h5 class="mb-4 text-2xl font-extrabold text-grey-concencrated">
+          <h5
+            class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-2xl"
+          >
             {{ data.title }}
           </h5>
 
@@ -260,20 +276,25 @@ const verify_step_sections = [
   <!-- ------------------------------------ END - Step Verification ------------------------------------ -->
 
   <!-- ------------------------------------ END - Join Now ------------------------------------ -->
-  <section class="relative my-8 py-16">
+  <section class="relative my-4 mb-6 py-8 lg:my-8 lg:py-16">
     <div
-      class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-20 2xl:px-10"
+      class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"
     >
       <NuxtImg
         src="/bird-illustration-3.png"
         alt="Bird Illustration 3"
-        class="h-56 w-56"
+        class="h-36 w-36 object-contain lg:h-56 lg:w-56"
       />
 
-      <h3 class="my-8 text-4xl font-extrabold text-grey-concencrated">
+      <h3
+        class="my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-4xl"
+      >
         Apa Yang Anda Tunggu? Bergabunglah Sekarang!
       </h3>
-      <p class="mx-auto max-w-3xl text-center text-grey-smooth">
+
+      <p
+        class="mx-auto max-w-3xl text-center text-base text-grey-smooth lg:text-lg"
+      >
         Tidak perlu menunggu lagi. Jadilah bagian dari komunitas terbesar di
         Indonesia. Daftarkan diri Anda, temukan teman-teman baru, dan bagikan
         minat Anda bersama Cuit. Mari bersama-sama menciptakan pengalaman media

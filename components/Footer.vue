@@ -18,7 +18,7 @@ import {
       <!-- Brand -->
       <div class="flex flex-col items-start gap-8">
         <NuxtLink to="/">
-          <img class="h-8 w-auto" src="/cuit-logo.png" />
+          <NuxtImg class="h-8 w-auto" src="/cuit-logo.png" />
         </NuxtLink>
 
         <section class="space-y-0.5">

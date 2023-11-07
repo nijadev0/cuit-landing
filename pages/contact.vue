@@ -8,18 +8,28 @@ useHead({
 
 <template>
   <!-- ------------------------------------ START - Hero ------------------------------------ -->
-  <section class="relative mt-20 pb-8">
+  <section class="relative mt-14 pb-0 lg:mt-20 lg:pb-8">
     <NuxtImg
-      class="h-auto w-full object-contain"
+      class="hidden h-auto w-full object-contain lg:block"
       src="/hero-bg-3.png"
       alt="Hero Background 3"
     />
-    <div
-      class="container absolute left-1/2 top-1/3 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-6"
-    >
-      <h1 class="text-center text-5xl font-bold leading-snug">Hubungi Kami</h1>
 
-      <p class="text-center text-2xl leading-normal text-grey-smooth">
+    <NuxtImg
+      class="block h-auto w-full object-contain lg:hidden"
+      src="/hero-bg-3-mobile.png"
+      alt="Hero Background 3 Mobile"
+    />
+    <div
+      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6"
+    >
+      <h1 class="text-center text-2xl font-extrabold lg:text-5xl">
+        Hubungi Kami
+      </h1>
+
+      <p
+        class="max-w-xs text-center text-base font-semibold text-grey-smooth lg:max-w-3xl lg:text-2xl"
+      >
         Punya pertanyaan, saran, atau masukan? Kami ingin mendengar pendapat
         Anda!
       </p>
@@ -29,9 +39,11 @@ useHead({
 
   <!-- ------------------------------------ START - Form ------------------------------------ -->
   <div
-    class="container relative z-20 mx-auto -mt-96 flex w-full max-w-screen-xl flex-col items-center justify-center px-20 2xl:px-10"
+    class="container relative z-20 mx-auto -mt-5 flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:-mt-96 lg:px-20 2xl:px-10"
   >
-    <form class="w-full max-w-lg space-y-6 rounded-lg bg-white p-14 shadow-2">
+    <form
+      class="w-full max-w-lg space-y-6 rounded-lg border border-grey-barrier bg-white p-6 shadow-md lg:border-0 lg:p-14 lg:shadow-2"
+    >
       <div class="space-y-2">
         <label for="name" class="text-sm font-medium text-grey-smooth">
           Nama
@@ -40,19 +52,19 @@ useHead({
           id="name"
           type="text"
           placeholder="Masukkan nama Anda disini"
-          class="relative w-full border-b border-neutral-400 p-4 outline-0 focus:border-baseline-primary"
+          class="relative w-full border-b border-neutral-400 p-4 py-3.5 outline-0 focus:border-baseline-primary lg:py-4"
         />
       </div>
 
       <div class="space-y-2">
-        <label for="email" class="text-sm font-medium text-grey-smooth"
-          >Email</label
-        >
+        <label for="email" class="text-sm font-medium text-grey-smooth">
+          Email
+        </label>
         <input
           id="email"
           type="text"
           placeholder="Masukkan email Anda disini"
-          class="relative w-full border-b border-neutral-400 p-4 outline-0 focus:border-baseline-primary"
+          class="relative w-full border-b border-neutral-400 p-4 py-3.5 outline-0 focus:border-baseline-primary lg:py-4"
         />
       </div>
 
@@ -64,7 +76,7 @@ useHead({
           id="phone"
           type="text"
           placeholder="Masukkan no. telepon Anda disini"
-          class="relative w-full border-b border-neutral-400 p-4 outline-0 focus:border-baseline-primary"
+          class="relative w-full border-b border-neutral-400 p-4 py-3.5 outline-0 focus:border-baseline-primary lg:py-4"
         />
       </div>
 
@@ -76,7 +88,7 @@ useHead({
           id="message"
           type="text"
           placeholder="Masukkan pesan Anda disini"
-          class="relative w-full border-b border-neutral-400 p-4 outline-0 focus:border-baseline-primary"
+          class="relative w-full border-b border-neutral-400 p-4 py-3.5 outline-0 focus:border-baseline-primary lg:py-4"
         />
       </div>
 
@@ -88,7 +100,7 @@ useHead({
           id="city"
           type="text"
           placeholder="Masukkan kota Anda disini"
-          class="relative w-full border-b border-neutral-400 p-4 outline-0 focus:border-baseline-primary"
+          class="relative w-full border-b border-neutral-400 p-4 py-3.5 outline-0 focus:border-baseline-primary lg:py-4"
         />
       </div>
 
@@ -105,20 +117,25 @@ useHead({
   <!-- ------------------------------------ END - Form ------------------------------------ -->
 
   <!-- ------------------------------------ END - Join Now ------------------------------------ -->
-  <section class="relative my-16 py-16">
+  <section class="relative my-6 mb-8 py-8 lg:my-8 lg:py-16">
     <div
-      class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-20 2xl:px-10"
+      class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"
     >
       <NuxtImg
         src="/bird-illustration-3.png"
         alt="Bird Illustration 3"
-        class="h-56 w-56"
+        class="h-36 w-36 object-contain lg:h-56 lg:w-56"
       />
 
-      <h3 class="my-8 text-4xl font-extrabold text-grey-concencrated">
+      <h3
+        class="my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-4xl"
+      >
         Apa Yang Anda Tunggu? Bergabunglah Sekarang!
       </h3>
-      <p class="mx-auto max-w-3xl text-center text-grey-smooth">
+
+      <p
+        class="mx-auto max-w-3xl text-center text-base text-grey-smooth lg:text-lg"
+      >
         Tidak perlu menunggu lagi. Jadilah bagian dari komunitas terbesar di
         Indonesia. Daftarkan diri Anda, temukan teman-teman baru, dan bagikan
         minat Anda bersama Cuit. Mari bersama-sama menciptakan pengalaman media

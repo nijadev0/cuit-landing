@@ -1,3 +1,4 @@
+import CloseCircleLineIcon from "./CloseCircleLineIcon.vue";
 import Dialog2LineIcon from "./Dialog2LineIcon.vue";
 import DiplomaVerifiedLineIcon from "./DiplomaVerifiedLineIcon.vue";
 import FacebookLineIcon from "./FacebookLineIcon.vue";
@@ -12,6 +13,7 @@ import StarCircleLineIcon from './StarCircleLineIcon.vue'
 import YoutubeLineIcon from "./YoutubeLineIcon.vue";
 
 export {
+  CloseCircleLineIcon,
   Dialog2LineIcon,
   DiplomaVerifiedLineIcon,
   FacebookLineIcon,
