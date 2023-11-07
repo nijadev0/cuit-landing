@@ -125,6 +125,33 @@ const experience_sections = [
     author: "Bernada Putri",
     username: "@bernadaput",
   },
+  {
+    id: 4,
+    src: "/bird-illustration-1.png",
+    alt: "Home Experience Avatar 1",
+    content:
+      "Aplikasi yang baik dan mudah sekali digunakan ayoo segera download cuit untuk mendapatkan cerita lainnya",
+    author: "Arsyifah Morkati",
+    username: "@arsyifahmor",
+  },
+  {
+    id: 5,
+    src: "/bird-illustration-2.png",
+    alt: "Home Experience Avatar 2",
+    content:
+      "Aplikasi debest banget yang beda dari yang lain harus banget diapresiasi.",
+    author: "Agung Birganjaya",
+    username: "@agungbirgan",
+  },
+  {
+    id: 6,
+    src: "/bird-illustration-3.png",
+    alt: "Home Experience Avatar 3",
+    content:
+      "Yook semangat yook let’s go indonesia terbang tinggi untuk aplikasi ini maju terus",
+    author: "Bernada Putri",
+    username: "@bernadaput",
+  },
 ];
 //--------------------------------------------------------------------------------------------------------------//
 </script>
@@ -148,7 +175,7 @@ const experience_sections = [
       class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6"
     >
       <h1
-        class="text-center text-2xl font-extrabold lg:text-5xl lg:leading-tight"
+        class="text-center text-2xl font-extrabold leading-tight lg:text-5xl lg:leading-tight"
       >
         Sambut Era Baru Media Sosial dengan CUIT
       </h1>
@@ -255,7 +282,7 @@ const experience_sections = [
   <!-- ------------------------------------ START - Experience ------------------------------------ -->
   <section class="relative my-4 bg-grey-footer py-6 lg:my-8 lg:py-16">
     <div
-      class="container mx-auto w-full max-w-screen-xl px-6 py-8 lg:px-20 lg:py-16 2xl:px-10"
+      class="container mx-auto w-full max-w-screen-xl overflow-x-hidden px-6 py-8 lg:px-20 lg:py-16 2xl:px-10"
     >
       <nav class="space-y-2 lg:space-y-4">
         <h3 class="text-center text-xl font-extrabold lg:text-4xl">
@@ -268,38 +295,44 @@ const experience_sections = [
         </p>
       </nav>
 
-      <div class="my-8 flex flex-col items-start gap-6 lg:flex-row lg:gap-8">
-        <figure
-          v-for="data in experience_sections"
-          class="flex basis-1/3 flex-col items-center rounded-xl border border-grey-barrier bg-white p-6"
-        >
-          <Dialog2LineIcon class="mb-4 h-6 w-6 self-start text-grey-smooth" />
+      <Swiper
+        :modules="[SwiperPagination]"
+        :pagination="{ clickable: true }"
+        :slides-per-view="1"
+        :space-between="24"
+        :breakpoints="{
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 32,
+          },
+        }"
+        class="my-swiper relative my-8 w-full rounded-xl"
+      >
+        <SwiperSlide :key="data.id" v-for="data in experience_sections">
+          <figure
+            class="!flex min-h-[384px] w-fit flex-col items-center rounded-xl border border-grey-barrier bg-white p-6"
+          >
+            <Dialog2LineIcon class="mb-4 h-6 w-6 self-start text-grey-smooth" />
 
-          <p class="min-h-[120px] text-center text-grey-black">
-            {{ data.content }}
-          </p>
+            <p class="min-h-[120px] text-center text-grey-black">
+              {{ data.content }}
+            </p>
 
-          <NuxtImg
-            class="mb-4 h-20 w-20 rounded-full"
-            :src="data.src"
-            :alt="data.alt"
-          />
+            <NuxtImg
+              class="mb-4 h-20 w-20 rounded-full"
+              :src="data.src"
+              :alt="data.alt"
+            />
 
-          <h5 class="text-base font-bold text-grey-concencrated">
-            {{ data.author }}
-          </h5>
-          <p class="text-base text-baseline-primary">{{ data.username }}</p>
-        </figure>
-      </div>
-
-      <div class="flex flex-row items-center justify-center gap-1">
-        <button
-          v-for="data in 4"
-          class="h-2 w-2 rounded-full bg-neutral-300 first:bg-baseline-primary"
-        >
-          &nbsp;
-        </button>
-      </div>
+            <h5 class="text-base font-bold text-grey-concencrated">
+              {{ data.author }}
+            </h5>
+            <p class="text-base text-baseline-primary">
+              {{ data.username }}
+            </p>
+          </figure>
+        </SwiperSlide>
+      </Swiper>
     </div>
   </section>
   <!-- ------------------------------------ END - Experience ------------------------------------ -->
@@ -333,3 +366,22 @@ const experience_sections = [
   </section>
   <!-- ------------------------------------ END - Join Now ------------------------------------ -->
 </template>
+
+<style>
+.swiper {
+  @apply overflow-visible;
+}
+
+.swiper-wrapper {
+  @apply overflow-x-hidden;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  @apply -bottom-8;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply bg-baseline-primary;
+}
+</style>

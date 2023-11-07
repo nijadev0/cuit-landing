@@ -1,4 +1,6 @@
 <script setup>
+import { Dialog2LineIcon } from "~/assets/icons";
+
 const experience_sections = [
   {
     id: 1,
@@ -58,19 +60,21 @@ const experience_sections = [
 </script>
 
 <template>
-  <section class="container mx-auto mt-20 max-w-screen-xl px-6 py-20 xl:px-10">
+  <section
+    class="container mx-auto mt-20 max-w-screen-xl overflow-hidden px-6 py-20 xl:px-10"
+  >
     <Swiper
-      :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperPagination]"
-      :pagination="true"
-      :slidesPerView="1"
-      v-bind:space-between="24"
+      :modules="[SwiperPagination]"
+      :pagination="{ clickable: true }"
+      :slides-per-view="1"
+      :space-between="24"
       :loop="true"
       :effect="'creative'"
       :autoplay="{
         delay: 8000,
         disableOnInteraction: true,
       }"
-      :creativeEffect="{
+      :creative-effect="{
         prev: {
           shadow: false,
           translate: ['-20%', 0, -1],
@@ -80,50 +84,37 @@ const experience_sections = [
         },
       }"
       :breakpoints="{
-        '1024': {
-          slidesPerView: 1,
+        1024: {
+          slidesPerView: 3,
           spaceBetween: 32,
         },
       }"
-      class="mySwiper relative w-full"
+      class="my-swiper relative my-8 w-full rounded-xl"
     >
-      <SwiperSlide
-        class="swiper flex items-center justify-center rounded-lg border bg-white"
-        v-for="slide in 10"
-        :key="slide"
-      >
-        <div class="h-80">
-          <p class="text-3xl font-bold">
-            {{ slide }}
+      <SwiperSlide :key="data.id" v-for="data in experience_sections">
+        <figure
+          class="!flex min-h-[384px] w-fit flex-col items-center rounded-xl border border-grey-barrier bg-white p-6"
+        >
+          <Dialog2LineIcon class="mb-4 h-6 w-6 self-start text-grey-smooth" />
+
+          <p class="min-h-[120px] text-center text-grey-black">
+            {{ data.content }}
           </p>
-        </div>
+
+          <NuxtImg
+            class="mb-4 h-20 w-20 rounded-full"
+            :src="data.src"
+            :alt="data.alt"
+          />
+
+          <h5 class="text-base font-bold text-grey-concencrated">
+            {{ data.author }}
+          </h5>
+          <p class="text-base text-baseline-primary">
+            {{ data.username }}
+          </p>
+        </figure>
       </SwiperSlide>
     </Swiper>
-    <!-- <figure
-    class="flex flex-col items-center rounded-xl border border-grey-barrier bg-white p-6"
-  >
-    <Dialog2LineIcon class="mb-4 h-6 w-6 self-start text-grey-smooth" />
-
-    <p class="min-h-[120px] text-center text-grey-black">
-      {{ data.content }}
-    </p>
-
-    <NuxtImg
-      class="mb-4 h-20 w-20 rounded-full"
-      :src="data.src"
-      :alt="data.alt"
-    />
-
-    <h5 class="text-base font-bold text-grey-concencrated">
-      {{ data.author }}
-    </h5>
-    <p class="text-base text-baseline-primary">{{ data.username }}</p>
-  </figure> -->
   </section>
 </template>
-
-<style>
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  @apply bg-baseline-primary;
-}
-</style>
