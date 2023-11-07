@@ -21,7 +21,7 @@ useHead({
       alt="Hero Background 3 Mobile"
     />
     <div
-      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6"
+      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6"
     >
       <h1 class="text-center text-2xl font-extrabold lg:text-5xl">
         Hubungi Kami
