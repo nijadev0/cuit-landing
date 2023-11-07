@@ -111,7 +111,7 @@ const verify_step_sections = [
     />
 
     <div
-      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6"
+      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-3xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6"
     >
       <h1 class="text-center text-2xl font-extrabold leading-snug lg:text-5xl">
         Verifikasi pada Cuit
@@ -202,6 +202,7 @@ const verify_step_sections = [
     <section
       v-for="data in verification_type_section"
       class="relative py-4 lg:py-8"
+      :class="[data.id === 2 ? 'bg-white' : 'bg-grey-footer']"
     >
       <div
         class="container mx-auto flex w-full max-w-screen-xl items-center justify-between gap-8 px-6 py-6 lg:gap-0 lg:px-20 lg:py-16 2xl:px-10"
@@ -209,7 +210,6 @@ const verify_step_sections = [
           data.direction === 'left'
             ? 'flex-col lg:flex-row'
             : 'flex-col lg:flex-row-reverse',
-          data.id === 2 ? 'bg-white' : 'bg-grey-footer',
         ]"
       >
         <figure class="basis-1/2">
