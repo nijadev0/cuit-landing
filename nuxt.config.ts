@@ -19,6 +19,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-
-  modules: ["@nuxt/image", "nuxt-swiper"],
+  modules: ["@nuxt/image", "nuxt-swiper", "@hypernym/nuxt-gsap"],
+  gsap: {
+    extraPlugins: {
+      scrollTrigger: true,
+    },
+  },
 });
