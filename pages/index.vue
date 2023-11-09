@@ -160,7 +160,7 @@ onMounted(() => {
   //--------------------------------------------------------------------------------------------------------------//
   // Hero Animation
   //--------------------------------------------------------------------------------------------------------------//
-  const hero = document.querySelectorAll("#hero .hero-item");
+  const hero = document.querySelectorAll("#home-hero .home-hero-item");
 
   hero.forEach((item, i) => {
     $gsap.fromTo(
@@ -185,7 +185,7 @@ onMounted(() => {
   //--------------------------------------------------------------------------------------------------------------//
 
   // Section - Image
-  const all_section_image = document.querySelectorAll("img.section-image");
+  const all_section_image = document.querySelectorAll("img.home-section-image");
 
   all_section_image.forEach((image, index) => {
     $gsap.fromTo(
@@ -200,7 +200,7 @@ onMounted(() => {
         duration: 1.5,
         ease: "power2.easeIn",
         scrollTrigger: {
-          trigger: `section.section.section-${index + 1}`,
+          trigger: `section.home-section.home-section-${index + 1}`,
           start: "bottom bottom",
         },
       },
@@ -209,7 +209,7 @@ onMounted(() => {
 
   // Section - Text Heading
   const all_section_text_heading = document.querySelectorAll(
-    ".section-text-heading",
+    ".home-section-text-heading",
   );
 
   all_section_text_heading.forEach((text, index) => {
@@ -225,7 +225,7 @@ onMounted(() => {
         duration: 1.5,
         ease: "power2.easeOut",
         scrollTrigger: {
-          trigger: `section.section.section-${index + 1}`,
+          trigger: `section.home-section.home-section-${index + 1}`,
           start: "bottom bottom",
         },
       },
@@ -234,7 +234,7 @@ onMounted(() => {
 
   // Section - Text Content
   const all_section_text_content = document.querySelectorAll(
-    ".section-text-content",
+    ".home-section-text-content",
   );
 
   all_section_text_content.forEach((text, index) => {
@@ -251,7 +251,7 @@ onMounted(() => {
         delay: 0.5,
         ease: "power2.easeOut",
         scrollTrigger: {
-          trigger: `section.section.section-${index + 1}`,
+          trigger: `section.home-section.home-section-${index + 1}`,
           start: "bottom bottom",
         },
       },
@@ -262,7 +262,7 @@ onMounted(() => {
   //--------------------------------------------------------------------------------------------------------------//
   // Section Why Us
   //--------------------------------------------------------------------------------------------------------------//
-  const why_us_card = document.querySelectorAll(".why-us-card");
+  const why_us_card = document.querySelectorAll(".home-why-us-card");
 
   why_us_card.forEach((card, index) => {
     $gsap.fromTo(
@@ -278,7 +278,7 @@ onMounted(() => {
         ease: "power2.easeIn",
         delay: index * 0.25,
         scrollTrigger: {
-          trigger: `.why-us`,
+          trigger: `.home-why-us`,
           start: "center bottom",
         },
       },
@@ -291,7 +291,7 @@ onMounted(() => {
   //--------------------------------------------------------------------------------------------------------------//
 
   // Section - Text Heading
-  const experience_text = document.querySelectorAll(".experience-text");
+  const experience_text = document.querySelectorAll(".home-experience-text");
 
   experience_text.forEach((text, index) => {
     $gsap.fromTo(
@@ -307,7 +307,7 @@ onMounted(() => {
         ease: "power2",
         stagger: index * 0.05,
         scrollTrigger: {
-          trigger: `#experience`,
+          trigger: `#home-experience`,
           start: "top center",
         },
       },
@@ -315,7 +315,7 @@ onMounted(() => {
   });
 
   // Section - Card
-  const experience_card = document.querySelectorAll(".experience-card");
+  const experience_card = document.querySelectorAll(".home-experience-card");
 
   experience_card.forEach((card, index) => {
     $gsap.fromTo(
@@ -331,17 +331,18 @@ onMounted(() => {
         ease: "power2",
         delay: 0.5 + index * 0.25,
         scrollTrigger: {
-          trigger: `#experience`,
+          trigger: `#home-experience`,
           start: "top center",
         },
       },
     );
   });
-  //--------------------------------------------------------------------------------------------------------------//
 
   //--------------------------------------------------------------------------------------------------------------//
+  // Section Join Now
+  //--------------------------------------------------------------------------------------------------------------//
 
-  const join_now_content = document.querySelectorAll(".join-now-content");
+  const join_now_content = document.querySelectorAll(".home-join-now-content");
 
   join_now_content.forEach((item, index) => {
     $gsap.fromTo(
@@ -357,7 +358,7 @@ onMounted(() => {
         ease: "power2",
         delay: index * 0.25,
         scrollTrigger: {
-          trigger: `.join-now`,
+          trigger: `.home-join-now`,
           start: "center bottom",
         },
       },
@@ -383,12 +384,12 @@ onMounted(() => {
     />
 
     <div
-      id="hero"
+      id="home-hero"
       class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6"
     >
       <div class="overflow-hidden">
         <h1
-          class="hero-item text-center text-2xl font-extrabold leading-tight lg:text-5xl lg:leading-tight"
+          class="home-hero-item text-center text-2xl font-extrabold leading-tight lg:text-5xl lg:leading-tight"
         >
           Sambut Era Baru Media Sosial dengan CUIT
         </h1>
@@ -396,7 +397,7 @@ onMounted(() => {
 
       <div class="overflow-hidden">
         <p
-          class="hero-item text-center text-base font-semibold leading-normal text-grey-smooth lg:text-2xl"
+          class="home-hero-item text-center text-base font-semibold leading-normal text-grey-smooth lg:text-2xl"
         >
           Temukan komunitasmu, bagikan sudut pandangmu, dan jadilah bagian dari
           era baru sosial media di Indonesia!
@@ -406,7 +407,7 @@ onMounted(() => {
       <section
         class="flex flex-row items-center justify-center gap-4 overflow-hidden"
       >
-        <NuxtLink href="/" class="hero-item">
+        <NuxtLink href="/" class="home-hero-item">
           <NuxtImg
             class="h-auto w-28 lg:w-44"
             src="/download-google-play.png"
@@ -414,7 +415,7 @@ onMounted(() => {
           />
         </NuxtLink>
 
-        <NuxtLink href="/" class="hero-item">
+        <NuxtLink href="/" class="home-hero-item">
           <NuxtImg
             class="h-auto w-28 lg:w-44"
             src="/download-app-store.png"
@@ -431,7 +432,7 @@ onMounted(() => {
     v-for="data in home_sections"
     class="relative py-4 lg:py-8"
     :class="[
-      `section section-${data.id}`,
+      `home-section home-section-${data.id}`,
       data.id === 2 || data.id === 4 ? 'bg-grey-footer' : 'bg-white',
     ]"
   >
@@ -443,7 +444,7 @@ onMounted(() => {
     >
       <figure class="basis-1/2 overflow-hidden">
         <NuxtImg
-          :class="`section-image section-image-${data.id}`"
+          :class="`home-section-image home-section-image-${data.id}`"
           class="h-auto w-full object-contain"
           :src="data.src"
           :alt="data.alt"
@@ -451,14 +452,18 @@ onMounted(() => {
       </figure>
 
       <section class="basis-1/2 space-y-4">
-        <div class="section-text-heading overflow-hidden">
-          <h3 class="text-xl font-extrabold leading-snug lg:text-4xl">
+        <div class="overflow-hidden">
+          <h3
+            class="home-section-text-heading text-xl font-extrabold leading-snug lg:text-4xl"
+          >
             {{ data.title }}
           </h3>
         </div>
 
-        <div class="section-text-content overflow-hidden">
-          <p class="text-base text-grey-smooth lg:text-lg">
+        <div class="overflow-hidden">
+          <p
+            class="home-section-text-content text-base text-grey-smooth lg:text-lg"
+          >
             {{ data.content }}
           </p>
         </div>
@@ -468,7 +473,7 @@ onMounted(() => {
   <!-- ------------------------------------ END - Section ------------------------------------ -->
 
   <!-- ------------------------------------ START - Why Choose Us ------------------------------------ -->
-  <section class="why-us relative py-4 lg:py-8">
+  <section class="home-why-us relative py-4 lg:py-8">
     <div
       class="container mx-auto w-full max-w-screen-xl px-6 py-6 lg:px-20 lg:py-16 2xl:px-10"
     >
@@ -478,7 +483,7 @@ onMounted(() => {
 
       <div class="flex flex-col items-start gap-6 lg:flex-row lg:gap-8">
         <figure
-          class="why-us-card relative basis-1/4"
+          class="home-why-us-card relative basis-1/4"
           v-for="data in choose_sections"
         >
           <NuxtImg
@@ -515,7 +520,7 @@ onMounted(() => {
 
   <!-- ------------------------------------ START - Experience ------------------------------------ -->
   <section
-    id="experience"
+    id="home-experience"
     class="relative my-4 bg-grey-footer py-6 lg:my-8 lg:py-16"
   >
     <div
@@ -524,7 +529,7 @@ onMounted(() => {
       <nav class="space-y-2 lg:space-y-4">
         <div class="overflow-hidden">
           <h3
-            class="experience-text text-center text-xl font-extrabold lg:text-4xl"
+            class="home-experience-text text-center text-xl font-extrabold lg:text-4xl"
           >
             Apa yang Pengguna Cuit Rasakan?
           </h3>
@@ -532,7 +537,7 @@ onMounted(() => {
 
         <div class="overflow-hidden">
           <p
-            class="experience-text text-center text-base font-medium text-grey-smooth lg:text-lg"
+            class="home-experience-text text-center text-base font-medium text-grey-smooth lg:text-lg"
           >
             Curahan hati para pengguna Cuit
           </p>
@@ -545,7 +550,7 @@ onMounted(() => {
         <figure
           :key="data.id"
           v-for="data in experience_sections"
-          class="experience-card flex min-h-[384px] w-1/3 min-w-[334px] flex-col items-center rounded-xl border border-grey-barrier bg-white p-6"
+          class="home-experience-card flex min-h-[384px] w-1/3 min-w-[334px] flex-col items-center rounded-xl border border-grey-barrier bg-white p-6"
         >
           <Dialog2LineIcon class="mb-4 h-6 w-6 self-start text-grey-smooth" />
 
@@ -572,7 +577,7 @@ onMounted(() => {
   <!-- ------------------------------------ END - Experience ------------------------------------ -->
 
   <!-- ------------------------------------ END - Join Now ------------------------------------ -->
-  <section class="join-now relative my-4 py-8 lg:my-8 lg:py-16">
+  <section class="home-join-now relative my-4 py-8 lg:my-8 lg:py-16">
     <div
       class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"
     >
@@ -580,13 +585,13 @@ onMounted(() => {
         <NuxtImg
           alt="Bird Illustration 3"
           src="/bird-illustration-3.png"
-          class="join-now-content h-36 w-36 object-contain lg:h-56 lg:w-56"
+          class="home-join-now-content h-36 w-36 object-contain lg:h-56 lg:w-56"
         />
       </div>
 
       <div class="overflow-hidden">
         <h3
-          class="join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-4xl"
+          class="home-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-4xl"
         >
           Apa Yang Anda Tunggu? Bergabunglah Sekarang!
         </h3>
@@ -594,7 +599,7 @@ onMounted(() => {
 
       <div class="overflow-hidden">
         <p
-          class="join-now-content mx-auto max-w-3xl text-center text-base text-grey-smooth lg:text-lg"
+          class="home-join-now-content mx-auto max-w-3xl text-center text-base text-grey-smooth lg:text-lg"
         >
           Tidak perlu menunggu lagi. Jadilah bagian dari komunitas terbesar di
           Indonesia. Daftarkan diri Anda, temukan teman-teman baru, dan bagikan

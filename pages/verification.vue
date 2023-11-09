@@ -6,9 +6,6 @@ import {
   StarCircleLineIcon,
 } from "~/assets/icons";
 //--------------------------------------------------------------------------------------------------------------//
-// import "swiper/css";
-// import "swiper/css/pagination";
-//--------------------------------------------------------------------------------------------------------------//
 useHead({
   title: "Cuit - Verifikasi",
 });
@@ -93,13 +90,282 @@ const verify_step_sections = [
   },
 ];
 //--------------------------------------------------------------------------------------------------------------//
+const { $gsap } = useNuxtApp();
+
+onMounted(() => {
+  //--------------------------------------------------------------------------------------------------------------//
+  // Hero Animation
+  //--------------------------------------------------------------------------------------------------------------//
+  const hero = document.querySelectorAll("#verify-hero .verify-hero-item");
+
+  hero.forEach((item, i) => {
+    $gsap.fromTo(
+      item,
+      {
+        y: 96,
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2",
+        delay: i * 0.25,
+      },
+    );
+  });
+  //--------------------------------------------------------------------------------------------------------------//
+
+  //--------------------------------------------------------------------------------------------------------------//
+  // Benefit Animation
+  //--------------------------------------------------------------------------------------------------------------//
+
+  // Section - Text Heading
+  const benefit_text = document.querySelectorAll(".verify-benefit-text");
+
+  benefit_text.forEach((text, index) => {
+    $gsap.fromTo(
+      text,
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2",
+        stagger: index * 0.05,
+        scrollTrigger: {
+          trigger: `#verify-benefit`,
+          start: "top center",
+        },
+      },
+    );
+  });
+
+  // Section - Card
+  const benefit_card = document.querySelectorAll(".verify-benefit-card");
+
+  benefit_card.forEach((card, index) => {
+    $gsap.fromTo(
+      card,
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2",
+        delay: 0.5 + index * 0.25,
+        scrollTrigger: {
+          trigger: `#verify-benefit`,
+          start: "top center",
+        },
+      },
+    );
+  });
+  //--------------------------------------------------------------------------------------------------------------//
+
+  //--------------------------------------------------------------------------------------------------------------//
+  // Type of Verify Animation
+  //--------------------------------------------------------------------------------------------------------------//
+
+  // Section - Text Heading
+  const type_text = document.querySelectorAll(".verify-type-text");
+
+  type_text.forEach((text, index) => {
+    $gsap.fromTo(
+      text,
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2",
+        stagger: index * 0.05,
+        scrollTrigger: {
+          trigger: `#verify-type`,
+          start: "top center",
+        },
+      },
+    );
+  });
+
+  // Section - Image
+  const all_section_image = document.querySelectorAll(
+    "img.verify-section-image",
+  );
+
+  all_section_image.forEach((image, index) => {
+    $gsap.fromTo(
+      image,
+      {
+        opacity: 0,
+        y: () => `-${image.offsetHeight / 4}`,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power2.easeIn",
+        scrollTrigger: {
+          trigger: `section.verify-section.verify-section-${index + 1}`,
+          start: "bottom bottom",
+        },
+      },
+    );
+  });
+
+  // Section - Text Heading
+  const all_section_text_heading = document.querySelectorAll(
+    ".verify-section-text-heading",
+  );
+
+  all_section_text_heading.forEach((text, index) => {
+    $gsap.fromTo(
+      text,
+      {
+        opacity: 0,
+        y: 32,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power2.easeOut",
+        scrollTrigger: {
+          trigger: `section.verify-section.verify-section-${index + 1}`,
+          start: "bottom bottom",
+        },
+      },
+    );
+  });
+
+  // Section - Text Content
+  const all_section_text_content = document.querySelectorAll(
+    ".verify-section-text-content",
+  );
+
+  all_section_text_content.forEach((text, index) => {
+    $gsap.fromTo(
+      text,
+      {
+        opacity: 0,
+        y: 32,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        delay: 0.5,
+        ease: "power2.easeOut",
+        scrollTrigger: {
+          trigger: `section.verify-section.verify-section-${index + 1}`,
+          start: "bottom bottom",
+        },
+      },
+    );
+  });
+  //--------------------------------------------------------------------------------------------------------------//
+
+  //--------------------------------------------------------------------------------------------------------------//
+  // Step Animation
+  //--------------------------------------------------------------------------------------------------------------//
+
+  // Section - Text Heading
+  const step_text = document.querySelectorAll(".verify-step-text");
+
+  step_text.forEach((text, index) => {
+    $gsap.fromTo(
+      text,
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2",
+        stagger: index * 0.05,
+        scrollTrigger: {
+          trigger: `#verify-step`,
+          start: "top center",
+        },
+      },
+    );
+  });
+
+  // Section - Card
+  const step_card = document.querySelectorAll(".verify-step-card");
+
+  step_card.forEach((card, index) => {
+    $gsap.fromTo(
+      card,
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2",
+        delay: 0.5 + index * 0.25,
+        scrollTrigger: {
+          trigger: `#verify-step`,
+          start: "top center",
+        },
+      },
+    );
+  });
+  //--------------------------------------------------------------------------------------------------------------//
+
+  //--------------------------------------------------------------------------------------------------------------//
+  // Section Join Now
+  //--------------------------------------------------------------------------------------------------------------//
+
+  const join_now_content = document.querySelectorAll(
+    ".verify-join-now-content",
+  );
+
+  join_now_content.forEach((item, index) => {
+    $gsap.fromTo(
+      item,
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2",
+        delay: index * 0.25,
+        scrollTrigger: {
+          trigger: `#verify-join-now`,
+          start: "center bottom",
+        },
+      },
+    );
+  });
+  //--------------------------------------------------------------------------------------------------------------//
+});
+//--------------------------------------------------------------------------------------------------------------//
 </script>
 
 <template>
   <!-- ------------------------------------ START - Hero ------------------------------------ -->
-  <section class="relative mt-14 pb-4 lg:mt-20 lg:pb-8">
+  <section id="verify-hero" class="relative mt-14 pb-4 lg:mt-20 lg:pb-8">
+    <div class="absolute inset-0 h-full w-full bg-white/60"></div>
     <NuxtImg
-      class="hidden h-auto w-full object-contain lg:block"
+      class="hidden h-auto w-full object-cover lg:block"
       src="/hero-bg-2.png"
       alt="Hero Background 2"
     />
@@ -113,28 +379,34 @@ const verify_step_sections = [
     <div
       class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-3xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6"
     >
-      <h1
-        class="text-center text-2xl font-extrabold leading-tight lg:text-5xl lg:leading-tight"
-      >
-        Verifikasi pada Cuit
-      </h1>
+      <div class="overflow-hidden">
+        <h1
+          class="verify-hero-item text-center text-2xl font-extrabold leading-tight lg:text-5xl lg:leading-tight"
+        >
+          Verifikasi pada Cuit
+        </h1>
+      </div>
 
-      <p
-        class="text-center text-base font-semibold leading-normal text-grey-smooth lg:text-2xl"
-      >
-        Akses fitur Cuit lebih lengkap di tangan Anda hanya dengan sekali proses
-        verifikasi. Buka kesempatan baru untuk berkolaborasi dengan tingkat
-        kredibilitas yang lebih tinggi.
-      </p>
+      <div class="overflow-hidden">
+        <p
+          class="verify-hero-item text-center text-base font-semibold leading-normal text-grey-smooth lg:text-2xl"
+        >
+          Akses fitur Cuit lebih lengkap di tangan Anda hanya dengan sekali
+          proses verifikasi. Buka kesempatan baru untuk berkolaborasi dengan
+          tingkat kredibilitas yang lebih tinggi.
+        </p>
+      </div>
 
-      <section class="flex flex-row items-center justify-center gap-4">
+      <section
+        class="flex flex-row items-center justify-center gap-4 overflow-hidden"
+      >
         <NuxtImg
-          class="h-auto w-28 lg:w-44"
+          class="verify-hero-item h-auto w-28 lg:w-44"
           src="/download-google-play.png"
           alt="Download Google Play"
         />
         <NuxtImg
-          class="h-auto w-28 lg:w-44"
+          class="verify-hero-item h-auto w-28 lg:w-44"
           src="/download-app-store.png"
           alt="Download App Store"
         />
@@ -144,26 +416,32 @@ const verify_step_sections = [
   <!-- ------------------------------------ END - Hero ------------------------------------ -->
 
   <!-- ------------------------------------ START - Benefit ------------------------------------ -->
-  <section class="relative my-4 py-8 lg:my-8 lg:py-16">
+  <section id="verify-benefit" class="relative my-4 py-8 lg:my-8 lg:py-16">
     <div
       class="container mx-auto w-full max-w-screen-xl px-6 lg:px-20 2xl:px-10"
     >
       <nav class="mb-8 space-y-4 lg:mb-16">
-        <h3 class="text-center text-xl font-extrabold lg:text-4xl">
-          Keuntungan Verifikasi
-        </h3>
+        <div class="overflow-hidden">
+          <h3
+            class="verify-benefit-text text-center text-xl font-extrabold lg:text-4xl"
+          >
+            Keuntungan Verifikasi
+          </h3>
+        </div>
 
-        <p
-          class="text-center text-base font-medium text-grey-smooth lg:text-lg"
-        >
-          Yang akan kamu dapatkan setelah melakukan proses verifikasi:
-        </p>
+        <div class="overflow-hidden">
+          <p
+            class="verify-benefit-text text-center text-base font-medium text-grey-smooth lg:text-lg"
+          >
+            Yang akan kamu dapatkan setelah melakukan proses verifikasi:
+          </p>
+        </div>
       </nav>
 
       <div class="flex flex-col items-start gap-6 lg:flex-row lg:gap-8">
         <figure
           v-for="data in benefit_sections"
-          class="flex basis-1/3 flex-col items-center justify-start rounded-xl border border-grey-barrier p-6 lg:min-h-[288px]"
+          class="verify-benefit-card flex basis-1/3 flex-col items-center justify-start rounded-xl border border-grey-barrier p-6 lg:min-h-[320px]"
         >
           <component
             :is="data.icon"
@@ -186,25 +464,35 @@ const verify_step_sections = [
   <!-- ------------------------------------ END - Benefit ------------------------------------ -->
 
   <!-- ------------------------------------ START - Section ------------------------------------ -->
-  <section class="relative my-4 py-8 lg:my-8 lg:py-16">
+  <section id="verify-type" class="relative my-4 py-8 lg:my-8 lg:py-16">
     <nav
       class="mb-12 flex flex-col items-center justify-center gap-4 px-6 lg:mb-16"
     >
-      <h3 class="text-center text-xl font-extrabold lg:text-4xl">
-        Macam-Macam Verifikasi di Cuit
-      </h3>
-      <p
-        class="max-w-3xl text-center text-base font-medium text-grey-smooth lg:text-lg"
-      >
-        Cuit menyediakan sistem verifikasi yang berbeda untuk jenis akun yang
-        berbeda seperti akun personal, akun premium, serta akun brand
-      </p>
+      <div class="overflow-hidden">
+        <h3
+          class="verify-type-text text-center text-xl font-extrabold lg:text-4xl"
+        >
+          Macam-Macam Verifikasi di Cuit
+        </h3>
+      </div>
+
+      <div class="overflow-hidden">
+        <p
+          class="verify-type-text max-w-3xl text-center text-base font-medium text-grey-smooth lg:text-lg"
+        >
+          Cuit menyediakan sistem verifikasi yang berbeda untuk jenis akun yang
+          berbeda seperti akun personal, akun premium, serta akun brand
+        </p>
+      </div>
     </nav>
 
     <section
       v-for="data in verification_type_section"
       class="relative py-4 lg:py-8"
-      :class="[data.id === 2 ? 'bg-white' : 'bg-grey-footer']"
+      :class="[
+        `verify-section verify-section-${data.id}`,
+        data.id === 2 ? 'bg-white' : 'bg-grey-footer',
+      ]"
     >
       <div
         class="container mx-auto flex w-full max-w-screen-xl items-center justify-between gap-8 px-6 py-6 lg:gap-0 lg:px-20 lg:py-16 2xl:px-10"
@@ -215,21 +503,32 @@ const verify_step_sections = [
         ]"
       >
         <figure class="basis-1/2">
-          <NuxtImg
-            class="h-auto w-full object-contain"
-            :src="data.src"
-            :alt="data.alt"
-          />
+          <div class="overflow-hidden">
+            <NuxtImg
+              class="h-auto w-full object-contain"
+              :class="`verify-section-image verify-section-image-${data.id}`"
+              :src="data.src"
+              :alt="data.alt"
+            />
+          </div>
         </figure>
 
         <section class="basis-1/2 space-y-2 lg:space-y-4">
-          <h3 class="text-xl font-extrabold leading-snug lg:text-4xl">
-            {{ data.title }}
-          </h3>
+          <div class="overflow-hidden">
+            <h3
+              class="verify-section-text-heading text-xl font-extrabold leading-snug lg:text-4xl"
+            >
+              {{ data.title }}
+            </h3>
+          </div>
 
-          <p class="text-base text-grey-smooth lg:text-lg">
-            {{ data.content }}
-          </p>
+          <div class="overflow-hidden">
+            <p
+              class="verify-section-text-content text-base text-grey-smooth lg:text-lg"
+            >
+              {{ data.content }}
+            </p>
+          </div>
         </section>
       </div>
     </section>
@@ -237,27 +536,34 @@ const verify_step_sections = [
   <!-- ------------------------------------ START - Section ------------------------------------ -->
 
   <!-- ------------------------------------ START - Step Verification ------------------------------------ -->
-  <section class="relative my-4 py-8 lg:my-8 lg:py-16">
+  <section id="verify-step" class="relative my-4 py-8 lg:my-8 lg:py-16">
     <div
       class="container mx-auto w-full max-w-screen-xl px-6 lg:px-20 2xl:px-10"
     >
       <nav
         class="mb-8 flex flex-col items-center justify-center gap-4 lg:mb-16"
       >
-        <h3 class="text-center text-xl font-extrabold lg:text-4xl">
-          Langkah Proses Verifikasi
-        </h3>
-        <p
-          class="max-w-3xl text-center text-base font-medium text-grey-smooth lg:text-lg"
-        >
-          Langkah singkat dan sederhana proses Verifikasi
-        </p>
+        <div class="overflow-hidden">
+          <h3
+            class="verify-step-text text-center text-xl font-extrabold lg:text-4xl"
+          >
+            Langkah Proses Verifikasi
+          </h3>
+        </div>
+
+        <div class="overflow-hidden">
+          <p
+            class="verify-step-text max-w-3xl text-center text-base font-medium text-grey-smooth lg:text-lg"
+          >
+            Langkah singkat dan sederhana proses Verifikasi
+          </p>
+        </div>
       </nav>
 
       <div class="flex flex-col items-start gap-6 lg:flex-row lg:gap-8">
         <figure
           v-for="data in verify_step_sections"
-          class="flex basis-1/3 flex-col items-center justify-start rounded-xl border border-grey-barrier p-6"
+          class="verify-step-card flex min-h-[720px] basis-1/3 flex-col items-center justify-start rounded-xl border border-grey-barrier p-6"
         >
           <NuxtImg
             class="mb-10 h-auto w-56 object-contain lg:w-64"
@@ -281,30 +587,39 @@ const verify_step_sections = [
   <!-- ------------------------------------ END - Step Verification ------------------------------------ -->
 
   <!-- ------------------------------------ END - Join Now ------------------------------------ -->
-  <section class="relative my-4 mb-6 py-8 lg:my-8 lg:py-16">
+  <section
+    id="verify-join-now"
+    class="relative my-4 mb-6 py-8 lg:my-8 lg:py-16"
+  >
     <div
       class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"
     >
-      <NuxtImg
-        src="/bird-illustration-3.png"
-        alt="Bird Illustration 3"
-        class="h-36 w-36 object-contain lg:h-56 lg:w-56"
-      />
+      <div class="overflow-hidden">
+        <NuxtImg
+          src="/bird-illustration-3.png"
+          alt="Bird Illustration 3"
+          class="verify-join-now-content h-36 w-36 object-contain lg:h-56 lg:w-56"
+        />
+      </div>
 
-      <h3
-        class="my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-4xl"
-      >
-        Apa Yang Anda Tunggu? Bergabunglah Sekarang!
-      </h3>
+      <div class="overflow-hidden">
+        <h3
+          class="verify-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-4xl"
+        >
+          Apa Yang Anda Tunggu? Bergabunglah Sekarang!
+        </h3>
+      </div>
 
-      <p
-        class="mx-auto max-w-3xl text-center text-base text-grey-smooth lg:text-lg"
-      >
-        Tidak perlu menunggu lagi. Jadilah bagian dari komunitas terbesar di
-        Indonesia. Daftarkan diri Anda, temukan teman-teman baru, dan bagikan
-        minat Anda bersama Cuit. Mari bersama-sama menciptakan pengalaman media
-        sosial yang lebih bermakna!
-      </p>
+      <div class="overflow-hidden">
+        <p
+          class="verify-join-now-content mx-auto max-w-3xl text-center text-base text-grey-smooth lg:text-lg"
+        >
+          Tidak perlu menunggu lagi. Jadilah bagian dari komunitas terbesar di
+          Indonesia. Daftarkan diri Anda, temukan teman-teman baru, dan bagikan
+          minat Anda bersama Cuit. Mari bersama-sama menciptakan pengalaman
+          media sosial yang lebih bermakna!
+        </p>
+      </div>
     </div>
   </section>
   <!-- ------------------------------------ END - Join Now ------------------------------------ -->
