@@ -363,7 +363,6 @@ onMounted(() => {
 <template>
   <!-- ------------------------------------ START - Hero ------------------------------------ -->
   <section id="verify-hero" class="relative mt-14 pb-4 lg:mt-20 lg:pb-8">
-    <div class="absolute inset-0 h-full w-full bg-white/60"></div>
     <NuxtImg
       class="hidden h-auto w-full object-cover lg:block"
       src="/hero-bg-2.png"
