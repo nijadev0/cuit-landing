@@ -93,12 +93,14 @@ onMounted(() => {
       class="hidden h-auto w-full object-cover lg:block"
       src="/hero-bg-3.png"
       alt="Hero Background 3"
+      preload
     />
 
     <NuxtImg
       class="block h-auto w-full object-contain lg:hidden"
       src="/hero-bg-3-mobile.png"
       alt="Hero Background 3 Mobile"
+      preload
     />
 
     <div
