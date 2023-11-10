@@ -497,7 +497,7 @@ onMounted(() => {
           />
 
           <div
-            class="relative flex flex-col items-center rounded-xl border border-grey-barrier bg-white p-6 lg:min-h-[432px]"
+            class="relative flex flex-col items-center rounded-xl border border-grey-barrier bg-white p-6 lg:min-h-[480px]"
           >
             <component
               :is="data.icon"

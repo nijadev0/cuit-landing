@@ -138,7 +138,7 @@ onMounted(() => {
         stagger: index * 0.05,
         scrollTrigger: {
           trigger: `#verify-benefit`,
-          start: "top center",
+          start: "top top",
         },
       },
     );

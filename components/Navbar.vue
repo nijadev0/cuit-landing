@@ -33,11 +33,19 @@ const closeMobileMenu = () => {
       <nav
         class="hidden basis-1/3 flex-row items-center justify-center gap-8 lg:flex"
       >
-        <NuxtLink to="/"> Beranda </NuxtLink>
+        <NuxtLink
+          to="/"
+          class="relative overflow-x-hidden font-semibold text-grey-concencrated before:absolute before:-left-full before:bottom-0 before:h-0.5 before:w-full before:bg-baseline-primary before:transition-all before:duration-300 before:ease-in hover:text-baseline-primary before:hover:left-0"
+        >
+          Beranda
+        </NuxtLink>
 
-        <NuxtLink to="/verification"> Verifikasi </NuxtLink>
-
-        <NuxtLink to="/contact"> Kontak </NuxtLink>
+        <NuxtLink
+          to="/verification"
+          class="relative overflow-x-hidden font-semibold text-grey-concencrated before:absolute before:-left-full before:bottom-0 before:h-0.5 before:w-full before:bg-baseline-primary before:transition-all before:duration-300 before:ease-in hover:text-baseline-primary before:hover:left-0"
+        >
+          Verifikasi
+        </NuxtLink>
       </nav>
 
       <!-- Account -->
@@ -117,3 +125,10 @@ const closeMobileMenu = () => {
   </transition>
   <!-- ------------------------------------ END - Mobile Menu Opened ------------------------------------ -->
 </template>
+
+<style>
+/* exact link will show the primary color for only the exact matching link */
+a.router-link-active.router-link-exact-active {
+  @apply font-semibold text-baseline-primary;
+}
+</style>

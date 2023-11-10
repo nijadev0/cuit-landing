@@ -53,34 +53,64 @@ import {
 
       <!-- Menu 1 -->
       <nav class="flex flex-col items-start gap-4 lg:gap-6">
-        <a href="/" class="font-semibold text-grey-concencrated"> Beranda </a>
+        <a
+          href="/"
+          class="relative overflow-x-hidden font-semibold text-grey-concencrated before:absolute before:-left-full before:bottom-0 before:h-0.5 before:w-full before:bg-baseline-primary before:transition-all before:duration-300 before:ease-in hover:text-baseline-primary before:hover:left-0"
+        >
+          Beranda
+        </a>
 
-        <a href="/verification" class="font-semibold text-grey-concencrated">
+        <a
+          href="/verification"
+          class="relative overflow-x-hidden font-semibold text-grey-concencrated before:absolute before:-left-full before:bottom-0 before:h-0.5 before:w-full before:bg-baseline-primary before:transition-all before:duration-300 before:ease-in hover:text-baseline-primary before:hover:left-0"
+        >
           Verifikasi
         </a>
 
-        <a href="/contact-us" class="font-semibold text-grey-concencrated">
+        <NuxtLink
+          to="/contact"
+          class="relative overflow-x-hidden font-semibold text-grey-concencrated before:absolute before:-left-full before:bottom-0 before:h-0.5 before:w-full before:bg-baseline-primary before:transition-all before:duration-300 before:ease-in hover:text-baseline-primary before:hover:left-0"
+        >
           Hubungi Kami
-        </a>
+        </NuxtLink>
 
-        <a href="/faq" class="font-semibold text-grey-concencrated"> FAQ </a>
+        <a
+          href="/faq"
+          class="relative overflow-x-hidden font-semibold text-grey-concencrated before:absolute before:-left-full before:bottom-0 before:h-0.5 before:w-full before:bg-baseline-primary before:transition-all before:duration-300 before:ease-in hover:text-baseline-primary before:hover:left-0"
+        >
+          FAQ
+        </a>
       </nav>
 
       <!-- Menu 2 -->
       <nav class="flex flex-col items-start gap-4 lg:gap-6">
-        <a href="/privacy-policy" class="font-semibold text-grey-concencrated">
+        <a
+          href="/privacy-policy"
+          class="relative overflow-x-hidden font-semibold text-grey-concencrated before:absolute before:-left-full before:bottom-0 before:h-0.5 before:w-full before:bg-baseline-primary before:transition-all before:duration-300 before:ease-in hover:text-baseline-primary before:hover:left-0"
+        >
           Kebijakan Privasi
         </a>
 
-        <a href="/term-of-use" class="font-semibold text-grey-concencrated">
+        <a
+          href="/term-of-use"
+          class="relative overflow-x-hidden font-semibold text-grey-concencrated before:absolute before:-left-full before:bottom-0 before:h-0.5 before:w-full before:bg-baseline-primary before:transition-all before:duration-300 before:ease-in hover:text-baseline-primary before:hover:left-0"
+        >
           Ketentuan Penggunaan
         </a>
 
-        <a href="/career" class="font-semibold text-grey-concencrated">
+        <a
+          href="/career"
+          class="relative overflow-x-hidden font-semibold text-grey-concencrated before:absolute before:-left-full before:bottom-0 before:h-0.5 before:w-full before:bg-baseline-primary before:transition-all before:duration-300 before:ease-in hover:text-baseline-primary before:hover:left-0"
+        >
           Karir
         </a>
 
-        <a href="/blog" class="font-semibold text-grey-concencrated"> Blog </a>
+        <a
+          href="/blog"
+          class="relative overflow-x-hidden font-semibold text-grey-concencrated before:absolute before:-left-full before:bottom-0 before:h-0.5 before:w-full before:bg-baseline-primary before:transition-all before:duration-300 before:ease-in hover:text-baseline-primary before:hover:left-0"
+        >
+          Blog
+        </a>
       </nav>
 
       <!-- Download -->
@@ -111,10 +141,3 @@ import {
   </footer>
   <!-- ------------------------------------ END - Footer ------------------------------------ -->
 </template>
-
-<style>
-/* exact link will show the primary color for only the exact matching link */
-a.router-link-active.router-link-exact-active {
-  @apply font-semibold text-baseline-primary;
-}
-</style>
