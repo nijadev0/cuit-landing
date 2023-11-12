@@ -378,11 +378,11 @@ onMounted(() => {
     />
 
     <div
-      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-3xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6"
+      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-3xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/2 lg:-translate-y-1/2 lg:gap-6 xl:top-1/3 xl:-translate-y-1/2"
     >
       <div class="overflow-hidden">
         <h1
-          class="verify-hero-item text-center text-2xl font-extrabold leading-tight lg:text-5xl lg:leading-tight"
+          class="verify-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight"
         >
           Verifikasi pada Cuit
         </h1>
@@ -390,7 +390,7 @@ onMounted(() => {
 
       <div class="overflow-hidden">
         <p
-          class="verify-hero-item text-center text-base font-semibold leading-normal text-grey-smooth lg:text-2xl"
+          class="verify-hero-item text-center text-base font-semibold leading-normal text-grey-smooth lg:text-xl xl:text-2xl"
         >
           Akses fitur Cuit lebih lengkap di tangan Anda hanya dengan sekali
           proses verifikasi. Buka kesempatan baru untuk berkolaborasi dengan
@@ -402,12 +402,12 @@ onMounted(() => {
         class="flex flex-row items-center justify-center gap-4 overflow-hidden"
       >
         <NuxtImg
-          class="verify-hero-item h-auto w-28 lg:w-44"
+          class="verify-hero-item h-auto w-28 lg:w-40 xl:w-44"
           src="/download-google-play.png"
           alt="Download Google Play"
         />
         <NuxtImg
-          class="verify-hero-item h-auto w-28 lg:w-44"
+          class="verify-hero-item h-auto w-28 lg:w-40 xl:w-44"
           src="/download-app-store.png"
           alt="Download App Store"
         />
@@ -446,11 +446,11 @@ onMounted(() => {
         >
           <component
             :is="data.icon"
-            class="mb-6 h-16 w-16 text-grey-secondary-5 lg:mb-8 lg:h-20 lg:w-20"
+            class="mb-6 h-16 w-16 text-grey-secondary-5 lg:mb-8 xl:h-20 xl:w-20"
           />
 
           <h5
-            class="mb-2 text-lg font-extrabold text-grey-concencrated lg:mb-4 lg:text-2xl"
+            class="mb-2 text-lg font-extrabold text-grey-concencrated lg:mb-1.5 lg:text-xl xl:mb-4 xl:text-2xl"
           >
             {{ data.title }}
           </h5>
@@ -471,7 +471,7 @@ onMounted(() => {
     >
       <div class="overflow-hidden">
         <h3
-          class="verify-type-text text-center text-xl font-extrabold lg:text-4xl"
+          class="verify-type-text text-center text-xl font-extrabold lg:text-3xl xl:text-4xl"
         >
           Macam-Macam Verifikasi di Cuit
         </h3>
@@ -517,7 +517,7 @@ onMounted(() => {
         <section class="basis-1/2 space-y-2 lg:space-y-4">
           <div class="overflow-hidden">
             <h3
-              class="verify-section-text-heading text-xl font-extrabold leading-snug lg:text-4xl"
+              class="verify-section-text-heading text-xl font-extrabold leading-snug lg:text-3xl xl:text-4xl"
             >
               {{ data.title }}
             </h3>
@@ -546,7 +546,7 @@ onMounted(() => {
       >
         <div class="overflow-hidden">
           <h3
-            class="verify-step-text text-center text-xl font-extrabold lg:text-4xl"
+            class="verify-step-text text-center text-xl font-extrabold lg:text-3xl xl:text-4xl"
           >
             Langkah Proses Verifikasi
           </h3>
@@ -564,10 +564,10 @@ onMounted(() => {
       <div class="flex flex-col items-start gap-6 lg:flex-row lg:gap-8">
         <figure
           v-for="data in verify_step_sections"
-          class="verify-step-card flex min-h-[720px] basis-1/3 flex-col items-center justify-start rounded-xl border border-grey-barrier p-6"
+          class="verify-step-card flex min-h-[720px] basis-1/3 flex-col items-center justify-start rounded-xl border border-grey-barrier p-6 lg:min-h-[600px]"
         >
           <NuxtImg
-            class="mb-10 h-auto w-56 object-contain lg:w-64"
+            class="mb-10 h-auto w-56 object-contain lg:w-48 xl:w-64"
             :src="data.src"
             :alt="data.alt"
           />
@@ -599,13 +599,13 @@ onMounted(() => {
         <NuxtImg
           src="/bird-illustration-3.png"
           alt="Bird Illustration 3"
-          class="verify-join-now-content h-36 w-36 object-contain lg:h-56 lg:w-56"
+          class="verify-join-now-content h-36 w-36 object-contain lg:h-48 lg:w-48 xl:h-56 xl:w-56"
         />
       </div>
 
       <div class="overflow-hidden">
         <h3
-          class="verify-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-4xl"
+          class="verify-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-3xl xl:text-4xl"
         >
           Apa Yang Anda Tunggu? Bergabunglah Sekarang!
         </h3>

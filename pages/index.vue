@@ -1,5 +1,8 @@
 <script setup>
 //--------------------------------------------------------------------------------------------------------------//
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Pagination } from "vue3-carousel";
+
 import {
   Dialog2LineIcon,
   FiltersCircleLineIcon,
@@ -7,6 +10,7 @@ import {
   MasksLineIcon,
   SmileCircleLineIcon,
 } from "~/assets/icons";
+
 //--------------------------------------------------------------------------------------------------------------//
 useHead({
   title: "Cuit - Sosial Media",
@@ -370,9 +374,11 @@ onMounted(() => {
 
 <template>
   <!-- ------------------------------------ START - Hero ------------------------------------ -->
-  <section class="relative mt-14 pb-4 lg:mt-20 lg:pb-8">
+  <section
+    class="relative mt-14 h-[calc(100vh_-_48px)] overflow-hidden pb-4 lg:mt-20 lg:pb-8"
+  >
     <NuxtImg
-      class="relative z-0 hidden h-auto w-full object-contain before:absolute before:z-10 before:h-full before:w-full before:bg-white/100 lg:block"
+      class="relative z-0 hidden h-full w-full object-cover object-top lg:block"
       src="/hero-bg-1.png"
       alt="Hero Background 1"
       preload
@@ -387,11 +393,11 @@ onMounted(() => {
 
     <div
       id="home-hero"
-      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6"
+      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/3 lg:gap-6 xl:top-1/3 xl:-translate-y-1/2"
     >
       <div class="overflow-hidden">
         <h1
-          class="home-hero-item text-center text-2xl font-extrabold leading-tight lg:text-5xl lg:leading-tight"
+          class="home-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight"
         >
           Sambut Era Baru Media Sosial dengan CUIT
         </h1>
@@ -399,7 +405,7 @@ onMounted(() => {
 
       <div class="overflow-hidden">
         <p
-          class="home-hero-item text-center text-base font-semibold leading-normal text-grey-smooth lg:text-2xl"
+          class="home-hero-item text-center text-base font-semibold leading-normal text-grey-smooth lg:text-xl xl:text-2xl"
         >
           Temukan komunitasmu, bagikan sudut pandangmu, dan jadilah bagian dari
           era baru sosial media di Indonesia!
@@ -411,7 +417,7 @@ onMounted(() => {
       >
         <NuxtLink href="/" class="home-hero-item">
           <NuxtImg
-            class="h-auto w-28 lg:w-44"
+            class="h-auto w-28 lg:w-40 xl:w-44"
             src="/download-google-play.png"
             alt="Download Google Play"
           />
@@ -419,7 +425,7 @@ onMounted(() => {
 
         <NuxtLink href="/" class="home-hero-item">
           <NuxtImg
-            class="h-auto w-28 lg:w-44"
+            class="h-auto w-28 lg:w-40 xl:w-44"
             src="/download-app-store.png"
             alt="Download App Store"
           />
@@ -456,7 +462,7 @@ onMounted(() => {
       <section class="basis-1/2 space-y-4">
         <div class="overflow-hidden">
           <h3
-            class="home-section-text-heading text-xl font-extrabold leading-snug lg:text-4xl"
+            class="home-section-text-heading text-xl font-extrabold leading-snug lg:text-3xl xl:text-4xl"
           >
             {{ data.title }}
           </h3>
@@ -464,7 +470,7 @@ onMounted(() => {
 
         <div class="overflow-hidden">
           <p
-            class="home-section-text-content text-base text-grey-smooth lg:text-lg"
+            class="home-section-text-content text-base text-grey-smooth xl:text-lg"
           >
             {{ data.content }}
           </p>
@@ -479,13 +485,17 @@ onMounted(() => {
     <div
       class="container mx-auto w-full max-w-screen-xl px-6 py-6 lg:px-20 lg:py-16 2xl:px-10"
     >
-      <h3 class="mb-8 text-center text-xl font-extrabold lg:mb-16 lg:text-4xl">
+      <h3
+        class="mb-8 text-center text-xl font-extrabold lg:mb-12 lg:text-4xl xl:mb-16"
+      >
         Mengapa Cuit?
       </h3>
 
-      <div class="flex flex-col items-start gap-6 lg:flex-row lg:gap-8">
+      <div
+        class="flex flex-col items-start gap-6 lg:flex-row lg:gap-4 xl:gap-8"
+      >
         <figure
-          class="home-why-us-card relative basis-1/4"
+          class="home-why-us-card relative lg:basis-1/2 xl:basis-1/4"
           v-for="data in choose_sections"
         >
           <NuxtImg
@@ -497,15 +507,15 @@ onMounted(() => {
           />
 
           <div
-            class="relative flex flex-col items-center rounded-xl border border-grey-barrier bg-white p-6 lg:min-h-[480px]"
+            class="relative flex flex-col flex-wrap items-center rounded-xl border border-grey-barrier bg-white p-6 lg:min-h-[560px] xl:min-h-[480px] 2xl:min-h-[440px]"
           >
             <component
               :is="data.icon"
-              class="mb-5 h-16 w-16 text-grey-secondary-5 lg:mb-10 lg:h-20 lg:w-20"
+              class="mb-5 h-16 w-16 text-grey-secondary-5 lg:mb-5 lg:h-16 lg:w-16 xl:mb-10 xl:h-20 xl:w-20"
             />
 
             <h5
-              class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-2xl"
+              class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-xl xl:text-2xl"
             >
               {{ data.title }}
             </h5>
@@ -528,10 +538,10 @@ onMounted(() => {
     <div
       class="container mx-auto w-full max-w-screen-xl overflow-x-hidden px-6 py-8 lg:px-20 lg:py-16 2xl:px-10"
     >
-      <nav class="space-y-2 lg:space-y-4">
+      <nav class="mb-16 space-y-2 lg:space-y-4">
         <div class="overflow-hidden">
           <h3
-            class="home-experience-text text-center text-xl font-extrabold lg:text-4xl"
+            class="home-experience-text text-center text-xl font-extrabold lg:text-3xl xl:text-4xl"
           >
             Apa yang Pengguna Cuit Rasakan?
           </h3>
@@ -546,34 +556,60 @@ onMounted(() => {
         </div>
       </nav>
 
-      <div
-        class="scrollbar-hide flex flex-col items-start gap-6 overflow-x-auto overflow-y-hidden py-8 lg:flex-row lg:gap-8"
-      >
-        <figure
-          :key="data.id"
-          v-for="data in experience_sections"
-          class="home-experience-card flex min-h-[384px] w-1/3 min-w-[334px] flex-col items-center rounded-xl border border-grey-barrier bg-white p-6"
+      <ClientOnly>
+        <carousel
+          :transition="500"
+          :breakpoints="{
+            300: {
+              itemsToShow: 1,
+              snapAlign: 'center',
+            },
+            1024: {
+              itemsToShow: 2.5,
+              snapAlign: 'center',
+            },
+            1280: {
+              itemsToShow: 3,
+              snapAlign: 'center',
+            },
+          }"
         >
-          <Dialog2LineIcon class="mb-4 h-6 w-6 self-start text-grey-smooth" />
+          <slide
+            v-for="data in experience_sections"
+            :key="data.id"
+            class="w-full px-0 first:pl-0 last:pr-0"
+          >
+            <figure
+              class="home-experience-card flex min-h-[384px] w-full flex-col items-center rounded-xl border border-grey-barrier bg-white p-6"
+            >
+              <Dialog2LineIcon
+                class="mb-4 h-6 w-6 self-start text-grey-smooth"
+              />
 
-          <p class="min-h-[120px] text-center text-grey-black">
-            {{ data.content }}
-          </p>
+              <p class="min-h-[120px] text-center text-grey-black">
+                {{ data.content }}
+              </p>
 
-          <NuxtImg
-            class="mb-4 h-20 w-20 rounded-full"
-            :src="data.src"
-            :alt="data.alt"
-          />
+              <NuxtImg
+                class="mb-4 h-20 w-20 rounded-full"
+                :src="data.src"
+                :alt="data.alt"
+              />
 
-          <h5 class="text-base font-bold text-grey-concencrated">
-            {{ data.author }}
-          </h5>
-          <p class="text-base text-baseline-primary">
-            {{ data.username }}
-          </p>
-        </figure>
-      </div>
+              <h5 class="text-base font-bold text-grey-concencrated">
+                {{ data.author }}
+              </h5>
+              <p class="text-base text-baseline-primary">
+                {{ data.username }}
+              </p>
+            </figure>
+          </slide>
+
+          <template #addons>
+            <pagination />
+          </template>
+        </carousel>
+      </ClientOnly>
     </div>
   </section>
   <!-- ------------------------------------ END - Experience ------------------------------------ -->
@@ -587,13 +623,13 @@ onMounted(() => {
         <NuxtImg
           alt="Bird Illustration 3"
           src="/bird-illustration-3.png"
-          class="home-join-now-content h-36 w-36 object-contain lg:h-56 lg:w-56"
+          class="home-join-now-content h-36 w-36 object-contain lg:h-48 lg:w-48 xl:h-56 xl:w-56"
         />
       </div>
 
       <div class="overflow-hidden">
         <h3
-          class="home-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-4xl"
+          class="home-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-3xl xl:text-4xl"
         >
           Apa Yang Anda Tunggu? Bergabunglah Sekarang!
         </h3>
@@ -641,5 +677,20 @@ onMounted(() => {
 .scrollbar-hide {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.carousel__pagination {
+  @apply mt-16 gap-0.5;
+}
+.carousel__pagination-button {
+  @apply after:h-2 after:w-2 after:rounded-full;
+}
+
+.carousel__pagination-button {
+  @apply after:bg-grey-secondary-5 after:hover:bg-baseline-primary/50;
+}
+
+.carousel__pagination-button--active {
+  @apply after:bg-baseline-primary;
 }
 </style>

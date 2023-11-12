@@ -104,11 +104,11 @@ onMounted(() => {
     />
 
     <div
-      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-6"
+      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-5 xl:gap-6"
     >
       <div class="overflow-hidden">
         <h1
-          class="contact-hero-item text-center text-2xl font-extrabold leading-tight lg:text-5xl lg:leading-tight"
+          class="contact-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight"
         >
           Hubungi Kami
         </h1>
@@ -116,7 +116,7 @@ onMounted(() => {
 
       <div class="overflow-hidden">
         <p
-          class="contact-hero-item max-w-xs text-center text-base font-semibold text-grey-smooth lg:max-w-3xl lg:text-2xl"
+          class="contact-hero-item max-w-xs text-center text-base font-semibold text-grey-smooth lg:max-w-3xl lg:text-xl xl:text-2xl"
         >
           Punya pertanyaan, saran, atau masukan? Kami ingin mendengar pendapat
           Anda!
@@ -127,7 +127,7 @@ onMounted(() => {
   <!-- ------------------------------------ END - Hero ------------------------------------ -->
 
   <!-- ------------------------------------ START - Form ------------------------------------ -->
-  <section id="contact-form" class="relative z-20 -mt-5 lg:-mt-96">
+  <section id="contact-form" class="relative z-20 -mt-5 lg:-mt-72 xl:-mt-96">
     <div
       class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"
     >
@@ -224,13 +224,13 @@ onMounted(() => {
         <NuxtImg
           src="/bird-illustration-3.png"
           alt="Bird Illustration 3"
-          class="contact-join-now-content h-36 w-36 object-contain lg:h-56 lg:w-56"
+          class="contact-join-now-content h-36 w-36 object-contain lg:h-48 lg:w-48 xl:h-56 xl:w-56"
         />
       </div>
 
       <div class="overflow-hidden">
         <h3
-          class="contact-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-4xl"
+          class="contact-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-3xl xl:text-4xl"
         >
           Apa Yang Anda Tunggu? Bergabunglah Sekarang!
         </h3>

@@ -25,7 +25,7 @@ const closeMobileMenu = () => {
       <!-- Logo -->
       <nav class="flex basis-1/2 self-start lg:basis-1/3">
         <NuxtLink to="/">
-          <NuxtImg class="h-6 w-auto lg:h-8" src="/cuit-logo.png" />
+          <NuxtImg class="h-6 w-auto lg:h-7 xl:h-8" src="/cuit-logo.png" />
         </NuxtLink>
       </nav>
 
@@ -54,14 +54,14 @@ const closeMobileMenu = () => {
       >
         <NuxtLink
           to="/login"
-          class="rounded-lg px-6 py-2 text-baseline-primary"
+          class="rounded-lg px-5 py-1.5 text-baseline-primary xl:px-6 xl:py-2"
         >
           Masuk
         </NuxtLink>
 
         <NuxtLink
           to="/register"
-          class="rounded-lg bg-baseline-primary px-6 py-2 text-white"
+          class="rounded-lg bg-baseline-primary px-5 py-1.5 text-white xl:px-6 xl:py-2"
         >
           Daftar
         </NuxtLink>
@@ -93,7 +93,7 @@ const closeMobileMenu = () => {
       v-if="show_mobile_menu === true"
       class="fixed left-0 top-14 z-50 h-[calc(100vh_-_56px)] w-full bg-white p-6"
     >
-      <div class="mb-14 flex flex-col items-start gap-4">
+      <div class="mb-14 flex flex-col items-start gap-4 md:items-center">
         <span @click="closeMobileMenu">
           <NuxtLink to="/">Beranda</NuxtLink>
         </span>
@@ -109,7 +109,7 @@ const closeMobileMenu = () => {
       <div class="flex flex-row items-center gap-4">
         <NuxtLink
           to="/login"
-          class="w-full rounded-lg px-6 py-2 text-center text-baseline-primary"
+          class="w-full rounded-lg border border-baseline-primary px-6 py-2 text-center text-baseline-primary"
         >
           Masuk
         </NuxtLink>
