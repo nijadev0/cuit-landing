@@ -375,7 +375,7 @@ onMounted(() => {
 <template>
   <!-- ------------------------------------ START - Hero ------------------------------------ -->
   <section
-    class="relative mt-14 h-[calc(100vh_-_48px)] overflow-hidden pb-4 lg:mt-20 lg:pb-8"
+    class="relative mt-14 overflow-hidden pb-4 lg:mt-20 lg:h-[calc(100vh_-_48px)] lg:pb-8"
   >
     <NuxtImg
       class="relative z-0 hidden h-full w-full object-cover object-top lg:block"
