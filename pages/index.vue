@@ -201,7 +201,7 @@ onMounted(() => {
       {
         y: 0,
         opacity: 1,
-        duration: 1.5,
+        duration: 1,
         ease: "power2.easeIn",
         scrollTrigger: {
           trigger: `section.home-section.home-section-${index + 1}`,
@@ -226,7 +226,7 @@ onMounted(() => {
       {
         y: 0,
         opacity: 1,
-        duration: 1.5,
+        duration: 1,
         ease: "power2.easeOut",
         scrollTrigger: {
           trigger: `section.home-section.home-section-${index + 1}`,
@@ -251,8 +251,8 @@ onMounted(() => {
       {
         y: 0,
         opacity: 1,
-        duration: 1.5,
-        delay: 0.5,
+        duration: 1,
+        delay: 0.25,
         ease: "power2.easeOut",
         scrollTrigger: {
           trigger: `section.home-section.home-section-${index + 1}`,
@@ -272,15 +272,15 @@ onMounted(() => {
     $gsap.fromTo(
       card,
       {
-        y: 80,
+        y: 40,
         opacity: 0,
       },
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 0.75,
         ease: "power2.easeIn",
-        delay: index * 0.25,
+        delay: index * 0.15,
         scrollTrigger: {
           trigger: `.home-why-us`,
           start: "center bottom",
@@ -377,15 +377,28 @@ onMounted(() => {
   <section
     class="relative mt-14 overflow-hidden pb-4 lg:mt-20 lg:h-[calc(100vh_-_48px)] lg:pb-8"
   >
+    <div class="relative z-10 h-full w-full">
+      <div
+        class="absolute inset-0 h-full w-full bg-gradient-to-tl from-white/0 via-white/50 to-white/0"
+      />
+
+      <NuxtImg
+        class="relative z-0 hidden h-full w-full object-cover object-center md:hidden lg:block"
+        src="/hero-bg-1.png"
+        alt="Hero Background 1"
+        preload
+      />
+    </div>
+
     <NuxtImg
-      class="relative z-0 hidden h-full w-full object-cover object-top lg:block"
-      src="/hero-bg-1.png"
-      alt="Hero Background 1"
+      class="hidden h-auto w-full object-contain md:block lg:hidden"
+      src="/hero-bg-1-tablet.png"
+      alt="Hero Background 1 Tablet"
       preload
     />
 
     <NuxtImg
-      class="block h-auto w-full object-contain lg:hidden"
+      class="block h-auto w-full object-contain md:hidden lg:hidden"
       src="/hero-bg-1-mobile.png"
       alt="Hero Background 1 Mobile"
       preload
@@ -393,7 +406,7 @@ onMounted(() => {
 
     <div
       id="home-hero"
-      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/3 lg:gap-6 xl:top-1/3 xl:-translate-y-1/2"
+      class="container absolute left-1/2 top-1/2 z-10 mx-auto -mt-0 flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:-mt-20 lg:gap-6"
     >
       <div class="overflow-hidden">
         <h1
@@ -495,7 +508,7 @@ onMounted(() => {
         class="flex flex-col items-start gap-6 lg:flex-row lg:gap-4 xl:gap-8"
       >
         <figure
-          class="home-why-us-card relative lg:basis-1/2 xl:basis-1/4"
+          class="home-why-us-card relative md:basis-1/2 xl:basis-1/4"
           v-for="data in choose_sections"
         >
           <NuxtImg
@@ -564,8 +577,12 @@ onMounted(() => {
               itemsToShow: 1,
               snapAlign: 'center',
             },
+            768: {
+              itemsToShow: 2,
+              snapAlign: 'center',
+            },
             1024: {
-              itemsToShow: 2.5,
+              itemsToShow: 3,
               snapAlign: 'center',
             },
             1280: {
@@ -577,10 +594,10 @@ onMounted(() => {
           <slide
             v-for="data in experience_sections"
             :key="data.id"
-            class="w-full px-0 first:pl-0 last:pr-0"
+            class="home-experience-card w-full first:pl-0 last:pr-0"
           >
             <figure
-              class="home-experience-card flex min-h-[384px] w-full flex-col items-center rounded-xl border border-grey-barrier bg-white p-6"
+              class="flex min-h-[384px] w-full flex-col items-center rounded-xl border border-grey-barrier bg-white p-6"
             >
               <Dialog2LineIcon
                 class="mb-4 h-6 w-6 self-start text-grey-smooth"
@@ -692,5 +709,9 @@ onMounted(() => {
 
 .carousel__pagination-button--active {
   @apply after:bg-baseline-primary;
+}
+
+.carousel__slide {
+  @apply pr-0 md:pr-6 lg:pr-6 xl:pr-8;
 }
 </style>

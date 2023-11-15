@@ -115,8 +115,6 @@ onMounted(() => {
     );
   });
   //--------------------------------------------------------------------------------------------------------------//
-
-  //--------------------------------------------------------------------------------------------------------------//
   // Benefit Animation
   //--------------------------------------------------------------------------------------------------------------//
 
@@ -133,12 +131,12 @@ onMounted(() => {
       {
         opacity: 1,
         y: 0,
-        duration: 1.5,
+        duration: 1,
         ease: "power2",
         stagger: index * 0.05,
         scrollTrigger: {
           trigger: `#verify-benefit`,
-          start: "top top",
+          start: "top bottom",
         },
       },
     );
@@ -157,9 +155,9 @@ onMounted(() => {
       {
         opacity: 1,
         y: 0,
-        duration: 1.5,
+        duration: 1,
         ease: "power2",
-        delay: 0.5 + index * 0.25,
+        delay: index * 0.25,
         scrollTrigger: {
           trigger: `#verify-benefit`,
           start: "top center",
@@ -167,8 +165,6 @@ onMounted(() => {
       },
     );
   });
-  //--------------------------------------------------------------------------------------------------------------//
-
   //--------------------------------------------------------------------------------------------------------------//
   // Type of Verify Animation
   //--------------------------------------------------------------------------------------------------------------//
@@ -186,12 +182,12 @@ onMounted(() => {
       {
         opacity: 1,
         y: 0,
-        duration: 1.5,
+        duration: 1,
         ease: "power2",
         stagger: index * 0.05,
         scrollTrigger: {
           trigger: `#verify-type`,
-          start: "top center",
+          start: "top bottom",
         },
       },
     );
@@ -212,7 +208,7 @@ onMounted(() => {
       {
         y: 0,
         opacity: 1,
-        duration: 1.5,
+        duration: 1,
         ease: "power2.easeIn",
         scrollTrigger: {
           trigger: `section.verify-section.verify-section-${index + 1}`,
@@ -237,7 +233,7 @@ onMounted(() => {
       {
         y: 0,
         opacity: 1,
-        duration: 1.5,
+        duration: 1,
         ease: "power2.easeOut",
         scrollTrigger: {
           trigger: `section.verify-section.verify-section-${index + 1}`,
@@ -262,7 +258,7 @@ onMounted(() => {
       {
         y: 0,
         opacity: 1,
-        duration: 1.5,
+        duration: 1,
         delay: 0.5,
         ease: "power2.easeOut",
         scrollTrigger: {
@@ -272,8 +268,6 @@ onMounted(() => {
       },
     );
   });
-  //--------------------------------------------------------------------------------------------------------------//
-
   //--------------------------------------------------------------------------------------------------------------//
   // Step Animation
   //--------------------------------------------------------------------------------------------------------------//
@@ -291,7 +285,7 @@ onMounted(() => {
       {
         opacity: 1,
         y: 0,
-        duration: 1.5,
+        duration: 1,
         ease: "power2",
         stagger: index * 0.05,
         scrollTrigger: {
@@ -315,7 +309,7 @@ onMounted(() => {
       {
         opacity: 1,
         y: 0,
-        duration: 1.5,
+        duration: 1,
         ease: "power2",
         delay: 0.5 + index * 0.25,
         scrollTrigger: {
@@ -325,8 +319,6 @@ onMounted(() => {
       },
     );
   });
-  //--------------------------------------------------------------------------------------------------------------//
-
   //--------------------------------------------------------------------------------------------------------------//
   // Section Join Now
   //--------------------------------------------------------------------------------------------------------------//
@@ -345,7 +337,7 @@ onMounted(() => {
       {
         opacity: 1,
         y: 0,
-        duration: 1.5,
+        duration: 1,
         ease: "power2",
         delay: index * 0.25,
         scrollTrigger: {
@@ -362,23 +354,39 @@ onMounted(() => {
 
 <template>
   <!-- ------------------------------------ START - Hero ------------------------------------ -->
-  <section id="verify-hero" class="relative mt-14 pb-4 lg:mt-20 lg:pb-8">
+  <section
+    id="verify-hero"
+    class="relative mt-14 overflow-hidden pb-4 lg:mt-20 lg:h-[calc(100vh_-_48px)] lg:pb-8"
+  >
+    <div class="relative z-10 h-full w-full">
+      <div
+        class="absolute inset-0 h-full w-full scale-110 bg-gradient-to-tl from-white/0 via-white/50 to-white/0"
+      />
+
+      <NuxtImg
+        class="hidden h-auto w-full object-cover object-center md:hidden lg:block"
+        src="/hero-bg-2.png"
+        alt="Hero Background 2"
+        preload
+      />
+    </div>
+
     <NuxtImg
-      class="hidden h-auto w-full object-cover lg:block"
-      src="/hero-bg-2.png"
-      alt="Hero Background 2"
+      class="hidden h-auto w-full object-contain md:block lg:hidden"
+      src="/hero-bg-2-tablet.png"
+      alt="Hero Background 2 Tablet"
       preload
     />
 
     <NuxtImg
-      class="block h-auto w-full object-contain lg:hidden"
+      class="block h-auto w-full object-contain md:hidden lg:hidden"
       src="/hero-bg-2-mobile.png"
       alt="Hero Background 2 Mobile"
       preload
     />
 
     <div
-      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-3xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/2 lg:-translate-y-1/2 lg:gap-6 xl:top-1/3 xl:-translate-y-1/2"
+      class="container absolute left-1/2 top-1/2 z-10 mx-auto -mt-10 flex h-full w-full max-w-3xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:gap-6"
     >
       <div class="overflow-hidden">
         <h1
@@ -442,7 +450,7 @@ onMounted(() => {
       <div class="flex flex-col items-start gap-6 lg:flex-row lg:gap-8">
         <figure
           v-for="data in benefit_sections"
-          class="verify-benefit-card flex basis-1/3 flex-col items-center justify-start rounded-xl border border-grey-barrier p-6 lg:min-h-[320px]"
+          class="verify-benefit-card flex basis-[100%] flex-col items-center justify-start rounded-xl border border-grey-barrier p-6 md:basis-1/2 lg:min-h-[320px] lg:basis-1/3 2xl:min-h-[288px]"
         >
           <component
             :is="data.icon"
@@ -504,7 +512,7 @@ onMounted(() => {
         ]"
       >
         <figure class="basis-1/2">
-          <div class="overflow-hidden">
+          <div class="w-full overflow-hidden">
             <NuxtImg
               class="h-auto w-full object-contain"
               :class="`verify-section-image verify-section-image-${data.id}`"
@@ -561,10 +569,12 @@ onMounted(() => {
         </div>
       </nav>
 
-      <div class="flex flex-col items-start gap-6 lg:flex-row lg:gap-8">
+      <div
+        class="flex flex-col items-start gap-6 md:items-center lg:flex-row lg:gap-8"
+      >
         <figure
           v-for="data in verify_step_sections"
-          class="verify-step-card flex min-h-[720px] basis-1/3 flex-col items-center justify-start rounded-xl border border-grey-barrier p-6 lg:min-h-[600px]"
+          class="verify-step-card flex min-h-[720px] basis-1/3 flex-col items-center justify-start rounded-xl border border-grey-barrier p-6 md:min-h-0 md:w-full lg:min-h-[600px]"
         >
           <NuxtImg
             class="mb-10 h-auto w-56 object-contain lg:w-48 xl:w-64"

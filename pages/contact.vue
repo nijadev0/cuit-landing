@@ -88,23 +88,39 @@ onMounted(() => {
 
 <template>
   <!-- ------------------------------------ START - Hero ------------------------------------ -->
-  <section id="contact-hero" class="relative mt-14 pb-0 lg:mt-20 lg:pb-8">
+  <section
+    id="contact-hero"
+    class="relative mt-14 overflow-hidden pb-0 lg:mt-20 lg:h-[calc(100vh_-_48px)] lg:pb-8"
+  >
+    <div class="relative z-10 h-full w-full">
+      <div
+        class="absolute inset-0 h-full w-full bg-gradient-to-tl from-white/0 via-white/25 to-white/0"
+      />
+
+      <NuxtImg
+        class="hidden h-auto w-full object-cover object-center md:hidden lg:block"
+        src="/hero-bg-3.png"
+        alt="Hero Background 3"
+        preload
+      />
+    </div>
+
     <NuxtImg
-      class="hidden h-auto w-full object-cover lg:block"
-      src="/hero-bg-3.png"
-      alt="Hero Background 3"
+      class="hidden h-auto w-full object-contain md:block lg:hidden"
+      src="/hero-bg-3-tablet.png"
+      alt="Hero Background 3 Tablet"
       preload
     />
 
     <NuxtImg
-      class="block h-auto w-full object-contain lg:hidden"
+      class="block h-auto w-full object-contain md:hidden lg:hidden"
       src="/hero-bg-3-mobile.png"
       alt="Hero Background 3 Mobile"
       preload
     />
 
     <div
-      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:top-1/3 lg:-translate-y-1/2 lg:gap-5 xl:gap-6"
+      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:-mt-20 lg:gap-5 xl:gap-6"
     >
       <div class="overflow-hidden">
         <h1
@@ -127,7 +143,10 @@ onMounted(() => {
   <!-- ------------------------------------ END - Hero ------------------------------------ -->
 
   <!-- ------------------------------------ START - Form ------------------------------------ -->
-  <section id="contact-form" class="relative z-20 -mt-5 lg:-mt-72 xl:-mt-96">
+  <section
+    id="contact-form"
+    class="relative z-20 -mt-5 md:-mt-20 lg:-mt-40 xl:-mt-56 2xl:-mt-96"
+  >
     <div
       class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"
     >
