@@ -100,10 +100,6 @@ const closeMobileMenu = () => {
         <span @click="closeMobileMenu">
           <NuxtLink to="/verification">Verifikasi</NuxtLink>
         </span>
-
-        <span @click="closeMobileMenu">
-          <NuxtLink to="/contact">Kontak</NuxtLink>
-        </span>
       </div>
 
       <div class="flex flex-row items-center gap-4">

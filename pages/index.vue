@@ -373,298 +373,356 @@ onMounted(() => {
 </script>
 
 <template>
-  <!-- ------------------------------------ START - Hero ------------------------------------ -->
-  <section
-    class="relative mt-14 overflow-hidden pb-4 lg:mt-20 lg:h-[calc(100vh_-_48px)] lg:pb-8"
+  <div
+    v-if="show_loader"
+    id="loader"
+    class="fixed inset-0 z-[999] flex h-screen w-screen items-center justify-center bg-white"
   >
-    <div class="relative z-10 h-full w-full">
-      <div
-        class="absolute inset-0 h-full w-full bg-gradient-to-tl from-white/0 via-white/50 to-white/0"
+    <NuxtImg class="h-auto w-24 animate-pulse lg:-mt-20" src="/cuit-logo.png" />
+  </div>
+
+  <div v-else>
+    <!-- ------------------------------------ START - Hero ------------------------------------ -->
+    <section
+      class="relative mt-14 overflow-hidden pb-4 lg:mt-20 lg:h-[calc(100vh_-_48px)] lg:pb-8"
+    >
+      <div class="relative z-10 h-full w-full">
+        <div
+          class="absolute inset-0 h-full w-full bg-gradient-to-tl from-white/0 via-white/50 to-white/0"
+        />
+
+        <NuxtImg
+          class="relative z-0 hidden h-full w-full object-cover object-center md:hidden lg:block"
+          src="/hero-bg-1.png"
+          alt="Hero Background 1"
+          preload
+        />
+      </div>
+
+      <NuxtImg
+        class="hidden h-auto w-full object-contain md:block lg:hidden"
+        src="/hero-bg-1-tablet.png"
+        alt="Hero Background 1 Tablet"
+        preload
       />
 
       <NuxtImg
-        class="relative z-0 hidden h-full w-full object-cover object-center md:hidden lg:block"
-        src="/hero-bg-1.png"
-        alt="Hero Background 1"
+        class="block h-auto w-full object-contain md:hidden lg:hidden"
+        src="/hero-bg-1-mobile.png"
+        alt="Hero Background 1 Mobile"
         preload
       />
-    </div>
 
-    <NuxtImg
-      class="hidden h-auto w-full object-contain md:block lg:hidden"
-      src="/hero-bg-1-tablet.png"
-      alt="Hero Background 1 Tablet"
-      preload
-    />
-
-    <NuxtImg
-      class="block h-auto w-full object-contain md:hidden lg:hidden"
-      src="/hero-bg-1-mobile.png"
-      alt="Hero Background 1 Mobile"
-      preload
-    />
-
-    <div
-      id="home-hero"
-      class="container absolute left-1/2 top-1/2 z-10 mx-auto -mt-0 flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:-mt-20 lg:gap-6"
-    >
-      <div class="overflow-hidden">
-        <h1
-          class="home-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight"
-        >
-          Sambut Era Baru Media Sosial dengan CUIT
-        </h1>
-      </div>
-
-      <div class="overflow-hidden">
-        <p
-          class="home-hero-item text-center text-base font-semibold leading-normal text-grey-smooth lg:text-xl xl:text-2xl"
-        >
-          Temukan komunitasmu, bagikan sudut pandangmu, dan jadilah bagian dari
-          era baru sosial media di Indonesia!
-        </p>
-      </div>
-
-      <section
-        class="flex flex-row items-center justify-center gap-4 overflow-hidden"
+      <div
+        id="home-hero"
+        class="container absolute left-1/2 top-1/2 z-10 mx-auto -mt-0 flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:-mt-20 lg:gap-6"
       >
-        <NuxtLink href="/" class="home-hero-item">
-          <NuxtImg
-            class="h-auto w-28 lg:w-40 xl:w-44"
-            src="/download-google-play.png"
-            alt="Download Google Play"
-          />
-        </NuxtLink>
-
-        <NuxtLink href="/" class="home-hero-item">
-          <NuxtImg
-            class="h-auto w-28 lg:w-40 xl:w-44"
-            src="/download-app-store.png"
-            alt="Download App Store"
-          />
-        </NuxtLink>
-      </section>
-    </div>
-  </section>
-  <!-- ------------------------------------ END - Hero ------------------------------------ -->
-
-  <!-- ------------------------------------ START - Section ------------------------------------ -->
-  <section
-    v-for="data in home_sections"
-    class="relative py-4 lg:py-8"
-    :class="[
-      `home-section home-section-${data.id}`,
-      data.id === 2 || data.id === 4 ? 'bg-grey-footer' : 'bg-white',
-    ]"
-  >
-    <div
-      class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-between gap-8 px-6 py-6 lg:gap-0 lg:px-20 lg:py-16 2xl:px-10"
-      :class="[
-        data.direction === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse',
-      ]"
-    >
-      <figure class="basis-1/2 overflow-hidden">
-        <NuxtImg
-          :class="`home-section-image home-section-image-${data.id}`"
-          class="h-auto w-full object-contain"
-          :src="data.src"
-          :alt="data.alt"
-        />
-      </figure>
-
-      <section class="basis-1/2 space-y-4">
         <div class="overflow-hidden">
-          <h3
-            class="home-section-text-heading text-xl font-extrabold leading-snug lg:text-3xl xl:text-4xl"
+          <h1
+            class="home-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight"
           >
-            {{ data.title }}
-          </h3>
+            Sambut Era Baru Media Sosial dengan CUIT
+          </h1>
         </div>
 
         <div class="overflow-hidden">
           <p
-            class="home-section-text-content text-base text-grey-smooth xl:text-lg"
+            class="home-hero-item text-center text-base font-semibold leading-normal text-grey-smooth lg:text-xl xl:text-2xl"
           >
-            {{ data.content }}
+            Temukan komunitasmu, bagikan sudut pandangmu, dan jadilah bagian
+            dari era baru sosial media di Indonesia!
           </p>
         </div>
-      </section>
-    </div>
-  </section>
-  <!-- ------------------------------------ END - Section ------------------------------------ -->
 
-  <!-- ------------------------------------ START - Why Choose Us ------------------------------------ -->
-  <section class="home-why-us relative py-4 lg:py-8">
-    <div
-      class="container mx-auto w-full max-w-screen-xl px-6 py-6 lg:px-20 lg:py-16 2xl:px-10"
-    >
-      <h3
-        class="mb-8 text-center text-xl font-extrabold lg:mb-12 lg:text-4xl xl:mb-16"
-      >
-        Mengapa Cuit?
-      </h3>
-
-      <div
-        class="flex flex-col items-start gap-6 lg:flex-row lg:gap-4 xl:gap-8"
-      >
-        <figure
-          class="home-why-us-card relative md:basis-1/2 xl:basis-1/4"
-          v-for="data in choose_sections"
+        <section
+          class="flex flex-row items-center justify-center gap-4 overflow-hidden"
         >
-          <NuxtImg
-            v-if="data.illustration_src"
-            class="absolute -z-0 hidden h-auto w-full lg:block"
-            :class="{ '-top-28': data.id === 1, '-top-36': data.id === 4 }"
-            :src="data.illustration_src"
-            :alt="data.illustration_alt"
-          />
-
-          <div
-            class="relative flex flex-col flex-wrap items-center rounded-xl border border-grey-barrier bg-white p-6 lg:min-h-[560px] xl:min-h-[480px] 2xl:min-h-[440px]"
-          >
-            <component
-              :is="data.icon"
-              class="mb-5 h-16 w-16 text-grey-secondary-5 lg:mb-5 lg:h-16 lg:w-16 xl:mb-10 xl:h-20 xl:w-20"
+          <NuxtLink href="/" class="home-hero-item">
+            <NuxtImg
+              class="h-auto w-28 lg:w-40 xl:w-44"
+              src="/download-google-play.png"
+              alt="Download Google Play"
             />
+          </NuxtLink>
 
-            <h5
-              class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-xl xl:text-2xl"
+          <NuxtLink href="/" class="home-hero-item">
+            <NuxtImg
+              class="h-auto w-28 lg:w-40 xl:w-44"
+              src="/download-app-store.png"
+              alt="Download App Store"
+            />
+          </NuxtLink>
+        </section>
+      </div>
+    </section>
+    <!-- ------------------------------------ END - Hero ------------------------------------ -->
+
+    <!-- ------------------------------------ START - Section ------------------------------------ -->
+    <section
+      v-for="data in home_sections"
+      class="relative py-4 lg:py-8"
+      :class="[
+        `home-section home-section-${data.id}`,
+        data.id === 2 || data.id === 4 ? 'bg-grey-footer' : 'bg-white',
+      ]"
+    >
+      <div
+        class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-between gap-8 px-6 py-6 lg:gap-0 lg:px-20 lg:py-16 2xl:px-10"
+        :class="[
+          data.direction === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse',
+        ]"
+      >
+        <figure class="basis-1/2 overflow-hidden">
+          <NuxtImg
+            :class="`home-section-image home-section-image-${data.id}`"
+            class="h-auto w-full object-contain"
+            :src="data.src"
+            :alt="data.alt"
+          />
+        </figure>
+
+        <section class="basis-1/2 space-y-4">
+          <div class="overflow-hidden">
+            <h3
+              class="home-section-text-heading text-xl font-extrabold leading-snug lg:text-3xl xl:text-4xl"
             >
               {{ data.title }}
-            </h5>
+            </h3>
+          </div>
 
-            <p class="text-center text-base text-grey-smooth">
+          <div class="overflow-hidden">
+            <p
+              class="home-section-text-content text-base text-grey-smooth xl:text-lg"
+            >
               {{ data.content }}
             </p>
           </div>
-        </figure>
+        </section>
       </div>
-    </div>
-  </section>
-  <!-- ------------------------------------ END - Why Choose Us ------------------------------------ -->
+    </section>
+    <!-- ------------------------------------ END - Section ------------------------------------ -->
 
-  <!-- ------------------------------------ START - Experience ------------------------------------ -->
-  <section
-    id="home-experience"
-    class="relative my-4 bg-grey-footer py-6 lg:my-8 lg:py-16"
-  >
-    <div
-      class="container mx-auto w-full max-w-screen-xl overflow-x-hidden px-6 py-8 lg:px-20 lg:py-16 2xl:px-10"
+    <!-- ------------------------------------ START - Why Choose Us ------------------------------------ -->
+    <section class="home-why-us relative py-4 lg:py-8">
+      <div
+        class="container mx-auto w-full max-w-screen-xl px-6 py-6 lg:px-20 lg:py-16 2xl:px-10"
+      >
+        <h3
+          class="mb-8 text-center text-xl font-extrabold lg:mb-12 lg:text-4xl xl:mb-16"
+        >
+          Mengapa Cuit?
+        </h3>
+
+        <div
+          class="hidden flex-col items-start gap-6 lg:flex lg:flex-row lg:gap-4 xl:gap-8"
+        >
+          <figure
+            v-for="data in choose_sections"
+            class="home-why-us-card relative md:basis-1/2 xl:basis-1/4"
+          >
+            <NuxtImg
+              v-if="data.illustration_src"
+              class="absolute -z-0 hidden h-auto w-full lg:block"
+              :class="{ '-top-28': data.id === 1, '-top-36': data.id === 4 }"
+              :src="data.illustration_src"
+              :alt="data.illustration_alt"
+            />
+
+            <div
+              class="relative flex flex-col flex-wrap items-center rounded-xl border border-grey-barrier bg-white p-6 lg:min-h-[560px] xl:min-h-[480px] 2xl:min-h-[440px]"
+            >
+              <component
+                :is="data.icon"
+                class="mb-5 h-16 w-16 text-grey-secondary-5 lg:mb-5 lg:h-16 lg:w-16 xl:mb-10 xl:h-20 xl:w-20"
+              />
+
+              <h5
+                class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-xl xl:text-2xl"
+              >
+                {{ data.title }}
+              </h5>
+
+              <p class="text-center text-base text-grey-smooth">
+                {{ data.content }}
+              </p>
+            </div>
+          </figure>
+        </div>
+
+        <ClientOnly>
+          <Carousel
+            class="block lg:hidden"
+            :transition="500"
+            :breakpoints="{
+              300: {
+                itemsToShow: 1,
+                snapAlign: 'center',
+              },
+              768: {
+                itemsToShow: 2,
+                snapAlign: 'center',
+              },
+            }"
+          >
+            <Slide
+              v-for="data in choose_sections"
+              :key="data.id"
+              class="home-experience-card w-full first:pl-0 last:pr-0"
+            >
+              <figure class="home-why-us-card relative">
+                <div
+                  class="relative flex min-h-[346px] flex-col flex-wrap items-center rounded-xl border border-grey-barrier bg-white p-6"
+                >
+                  <component
+                    :is="data.icon"
+                    class="mb-5 h-16 w-16 text-grey-secondary-5 lg:mb-5 lg:h-16 lg:w-16 xl:mb-10 xl:h-20 xl:w-20"
+                  />
+
+                  <h5
+                    class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-xl xl:text-2xl"
+                  >
+                    {{ data.title }}
+                  </h5>
+
+                  <p class="text-center text-base text-grey-smooth">
+                    {{ data.content }}
+                  </p>
+                </div>
+              </figure>
+            </Slide>
+
+            <template #addons>
+              <Pagination />
+            </template>
+          </Carousel>
+        </ClientOnly>
+      </div>
+    </section>
+    <!-- ------------------------------------ END - Why Choose Us ------------------------------------ -->
+
+    <!-- ------------------------------------ START - Experience ------------------------------------ -->
+    <section
+      id="home-experience"
+      class="relative my-4 bg-grey-footer py-6 lg:my-8 lg:py-16"
     >
-      <nav class="mb-16 space-y-2 lg:space-y-4">
+      <div
+        class="container mx-auto w-full max-w-screen-xl px-6 py-8 lg:px-20 lg:py-16 2xl:px-10"
+      >
+        <nav class="mb-8 space-y-2 md:mb-16 lg:space-y-4">
+          <div class="overflow-hidden">
+            <h3
+              class="home-experience-text text-center text-xl font-extrabold lg:text-3xl xl:text-4xl"
+            >
+              Apa yang Pengguna Cuit Rasakan?
+            </h3>
+          </div>
+
+          <div class="overflow-hidden">
+            <p
+              class="home-experience-text text-center text-base font-medium text-grey-smooth lg:text-lg"
+            >
+              Curahan hati para pengguna Cuit
+            </p>
+          </div>
+        </nav>
+
+        <ClientOnly>
+          <Carousel
+            :transition="500"
+            :breakpoints="{
+              300: {
+                itemsToShow: 1,
+                snapAlign: 'center',
+              },
+              768: {
+                itemsToShow: 2,
+                snapAlign: 'center',
+              },
+              1024: {
+                itemsToShow: 3,
+                snapAlign: 'center',
+              },
+              1280: {
+                itemsToShow: 3,
+                snapAlign: 'center',
+              },
+            }"
+          >
+            <Slide
+              v-for="data in experience_sections"
+              :key="data.id"
+              class="home-experience-card w-full first:pl-0 last:pr-0"
+            >
+              <figure
+                class="flex min-h-[346px] w-full flex-col items-center rounded-xl border border-grey-barrier bg-white p-6"
+              >
+                <Dialog2LineIcon
+                  class="mb-4 h-6 w-6 self-start text-grey-smooth"
+                />
+
+                <p class="min-h-[120px] text-center text-grey-black">
+                  {{ data.content }}
+                </p>
+
+                <NuxtImg
+                  class="mb-4 h-20 w-20 rounded-full"
+                  :src="data.src"
+                  :alt="data.alt"
+                />
+
+                <h5 class="text-base font-bold text-grey-concencrated">
+                  {{ data.author }}
+                </h5>
+                <p class="text-base text-baseline-primary">
+                  {{ data.username }}
+                </p>
+              </figure>
+            </Slide>
+
+            <template #addons>
+              <Pagination />
+            </template>
+          </Carousel>
+        </ClientOnly>
+      </div>
+    </section>
+    <!-- ------------------------------------ END - Experience ------------------------------------ -->
+
+    <!-- ------------------------------------ END - Join Now ------------------------------------ -->
+    <section class="home-join-now relative my-4 py-8 lg:my-8 lg:py-16">
+      <div
+        class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"
+      >
+        <div class="overflow-hidden">
+          <NuxtImg
+            alt="Bird Illustration 3"
+            src="/bird-illustration-3.png"
+            class="home-join-now-content h-36 w-36 object-contain lg:h-48 lg:w-48 xl:h-56 xl:w-56"
+          />
+        </div>
+
         <div class="overflow-hidden">
           <h3
-            class="home-experience-text text-center text-xl font-extrabold lg:text-3xl xl:text-4xl"
+            class="home-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-3xl xl:text-4xl"
           >
-            Apa yang Pengguna Cuit Rasakan?
+            Apa Yang Anda Tunggu? Bergabunglah Sekarang!
           </h3>
         </div>
 
         <div class="overflow-hidden">
           <p
-            class="home-experience-text text-center text-base font-medium text-grey-smooth lg:text-lg"
+            class="home-join-now-content mx-auto max-w-3xl text-center text-base text-grey-smooth lg:text-lg"
           >
-            Curahan hati para pengguna Cuit
+            Tidak perlu menunggu lagi. Jadilah bagian dari komunitas terbesar di
+            Indonesia. Daftarkan diri Anda, temukan teman-teman baru, dan
+            bagikan minat Anda bersama Cuit. Mari bersama-sama menciptakan
+            pengalaman media sosial yang lebih bermakna!
           </p>
         </div>
-      </nav>
-
-      <ClientOnly>
-        <carousel
-          :transition="500"
-          :breakpoints="{
-            300: {
-              itemsToShow: 1,
-              snapAlign: 'center',
-            },
-            768: {
-              itemsToShow: 2,
-              snapAlign: 'center',
-            },
-            1024: {
-              itemsToShow: 3,
-              snapAlign: 'center',
-            },
-            1280: {
-              itemsToShow: 3,
-              snapAlign: 'center',
-            },
-          }"
-        >
-          <slide
-            v-for="data in experience_sections"
-            :key="data.id"
-            class="home-experience-card w-full first:pl-0 last:pr-0"
-          >
-            <figure
-              class="flex min-h-[384px] w-full flex-col items-center rounded-xl border border-grey-barrier bg-white p-6"
-            >
-              <Dialog2LineIcon
-                class="mb-4 h-6 w-6 self-start text-grey-smooth"
-              />
-
-              <p class="min-h-[120px] text-center text-grey-black">
-                {{ data.content }}
-              </p>
-
-              <NuxtImg
-                class="mb-4 h-20 w-20 rounded-full"
-                :src="data.src"
-                :alt="data.alt"
-              />
-
-              <h5 class="text-base font-bold text-grey-concencrated">
-                {{ data.author }}
-              </h5>
-              <p class="text-base text-baseline-primary">
-                {{ data.username }}
-              </p>
-            </figure>
-          </slide>
-
-          <template #addons>
-            <pagination />
-          </template>
-        </carousel>
-      </ClientOnly>
-    </div>
-  </section>
-  <!-- ------------------------------------ END - Experience ------------------------------------ -->
-
-  <!-- ------------------------------------ END - Join Now ------------------------------------ -->
-  <section class="home-join-now relative my-4 py-8 lg:my-8 lg:py-16">
-    <div
-      class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"
-    >
-      <div class="overflow-hidden">
-        <NuxtImg
-          alt="Bird Illustration 3"
-          src="/bird-illustration-3.png"
-          class="home-join-now-content h-36 w-36 object-contain lg:h-48 lg:w-48 xl:h-56 xl:w-56"
-        />
       </div>
-
-      <div class="overflow-hidden">
-        <h3
-          class="home-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-3xl xl:text-4xl"
-        >
-          Apa Yang Anda Tunggu? Bergabunglah Sekarang!
-        </h3>
-      </div>
-
-      <div class="overflow-hidden">
-        <p
-          class="home-join-now-content mx-auto max-w-3xl text-center text-base text-grey-smooth lg:text-lg"
-        >
-          Tidak perlu menunggu lagi. Jadilah bagian dari komunitas terbesar di
-          Indonesia. Daftarkan diri Anda, temukan teman-teman baru, dan bagikan
-          minat Anda bersama Cuit. Mari bersama-sama menciptakan pengalaman
-          media sosial yang lebih bermakna!
-        </p>
-      </div>
-    </div>
-  </section>
-  <!-- ------------------------------------ END - Join Now ------------------------------------ -->
+    </section>
+    <!-- ------------------------------------ END - Join Now ------------------------------------ -->
+  </div>
 </template>
 
 <style>
@@ -696,7 +754,11 @@ onMounted(() => {
   scrollbar-width: none; /* Firefox */
 }
 
-.carousel__pagination {
+.home-why-us .carousel__pagination {
+  @apply !mt-8 gap-0.5;
+}
+
+#home-experience .carousel__pagination {
   @apply mt-16 gap-0.5;
 }
 .carousel__pagination-button {

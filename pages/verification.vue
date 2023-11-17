@@ -1,5 +1,8 @@
 <script setup>
 //--------------------------------------------------------------------------------------------------------------//
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Pagination } from "vue3-carousel";
+
 import {
   DiplomaVerifiedLineIcon,
   FiltersCircleLineIcon,
@@ -447,7 +450,9 @@ onMounted(() => {
         </div>
       </nav>
 
-      <div class="flex flex-col items-start gap-6 lg:flex-row lg:gap-8">
+      <div
+        class="hidden flex-col items-start gap-6 lg:flex lg:flex-row lg:gap-8"
+      >
         <figure
           v-for="data in benefit_sections"
           class="verify-benefit-card flex basis-[100%] flex-col items-center justify-start rounded-xl border border-grey-barrier p-6 md:basis-1/2 lg:min-h-[320px] lg:basis-1/3 2xl:min-h-[288px]"
@@ -468,6 +473,52 @@ onMounted(() => {
           </p>
         </figure>
       </div>
+
+      <ClientOnly>
+        <Carousel
+          class="block lg:hidden"
+          :transition="500"
+          :breakpoints="{
+            300: {
+              itemsToShow: 1,
+              snapAlign: 'center',
+            },
+            768: {
+              itemsToShow: 2,
+              snapAlign: 'center',
+            },
+          }"
+        >
+          <Slide
+            v-for="data in benefit_sections"
+            :key="data.id"
+            class="home-experience-card w-full first:pl-0 last:pr-0"
+          >
+            <figure
+              class="verify-benefit-card flex min-h-[270px] w-full flex-col items-center justify-start rounded-xl border border-grey-barrier p-6"
+            >
+              <component
+                :is="data.icon"
+                class="mb-6 h-16 w-16 text-grey-secondary-5 lg:mb-8 xl:h-20 xl:w-20"
+              />
+
+              <h5
+                class="mb-2 text-lg font-extrabold text-grey-concencrated lg:mb-1.5 lg:text-xl xl:mb-4 xl:text-2xl"
+              >
+                {{ data.title }}
+              </h5>
+
+              <p class="text-center text-base font-medium text-grey-smooth">
+                {{ data.content }}
+              </p>
+            </figure>
+          </Slide>
+
+          <template #addons>
+            <Pagination />
+          </template>
+        </Carousel>
+      </ClientOnly>
     </div>
   </section>
   <!-- ------------------------------------ END - Benefit ------------------------------------ -->
@@ -570,7 +621,7 @@ onMounted(() => {
       </nav>
 
       <div
-        class="flex flex-col items-start gap-6 md:items-center lg:flex-row lg:gap-8"
+        class="hidden flex-col items-start gap-6 md:items-center lg:flex lg:flex-row lg:gap-8"
       >
         <figure
           v-for="data in verify_step_sections"
@@ -593,6 +644,53 @@ onMounted(() => {
           </p>
         </figure>
       </div>
+
+      <ClientOnly>
+        <Carousel
+          class="block lg:hidden"
+          :transition="500"
+          :breakpoints="{
+            300: {
+              itemsToShow: 1,
+              snapAlign: 'center',
+            },
+            768: {
+              itemsToShow: 2,
+              snapAlign: 'center',
+            },
+          }"
+        >
+          <Slide
+            v-for="data in verify_step_sections"
+            :key="data.id"
+            class="home-experience-card w-full first:pl-0 last:pr-0"
+          >
+            <figure
+              class="verify-step-card flex min-h-[650px] flex-col items-center justify-start rounded-xl border border-grey-barrier p-6"
+            >
+              <NuxtImg
+                class="mb-10 h-auto w-56 object-contain lg:w-48 xl:w-64"
+                :src="data.src"
+                :alt="data.alt"
+              />
+
+              <h5
+                class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-2xl"
+              >
+                {{ data.title }}
+              </h5>
+
+              <p class="text-center text-base font-medium text-grey-smooth">
+                {{ data.content }}
+              </p>
+            </figure>
+          </Slide>
+
+          <template #addons>
+            <Pagination />
+          </template>
+        </Carousel>
+      </ClientOnly>
     </div>
   </section>
   <!-- ------------------------------------ END - Step Verification ------------------------------------ -->
@@ -635,3 +733,13 @@ onMounted(() => {
   </section>
   <!-- ------------------------------------ END - Join Now ------------------------------------ -->
 </template>
+
+<style>
+#verify-benefit .carousel__pagination {
+  @apply mt-6 gap-0.5;
+}
+
+#verify-step .carousel__pagination {
+  @apply mt-6 gap-0.5;
+}
+</style>
