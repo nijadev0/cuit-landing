@@ -124,7 +124,7 @@ onMounted(() => {
     >
       <div class="overflow-hidden">
         <h1
-          class="contact-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight"
+          class="contact-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:font-extrabold lg:leading-tight xl:text-5xl xl:font-extrabold xl:leading-tight"
         >
           Hubungi Kami
         </h1>
@@ -145,7 +145,7 @@ onMounted(() => {
   <!-- ------------------------------------ START - Form ------------------------------------ -->
   <section
     id="contact-form"
-    class="relative z-20 -mt-5 md:-mt-20 lg:-mt-40 xl:-mt-56 2xl:-mt-96"
+    class="relative z-20 -mt-5 md:-mt-20 lg:-mt-56 xl:-mt-56 2xl:-mt-96"
   >
     <div
       class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"

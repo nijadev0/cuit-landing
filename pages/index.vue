@@ -514,7 +514,7 @@ onMounted(() => {
         </h3>
 
         <div
-          class="hidden flex-col items-start gap-6 lg:flex lg:flex-row lg:gap-4 xl:gap-8"
+          class="hidden flex-col items-start gap-6 xl:flex xl:flex-row xl:gap-8"
         >
           <figure
             v-for="data in choose_sections"
@@ -529,7 +529,7 @@ onMounted(() => {
             />
 
             <div
-              class="relative flex flex-col flex-wrap items-center rounded-xl border border-grey-barrier bg-white p-6 lg:min-h-[560px] xl:min-h-[480px] 2xl:min-h-[440px]"
+              class="relative flex flex-col flex-wrap items-center rounded-xl border border-grey-barrier bg-white p-6 lg:min-h-[442px] xl:min-h-[480px] 2xl:min-h-[440px]"
             >
               <component
                 :is="data.icon"
@@ -551,7 +551,7 @@ onMounted(() => {
 
         <ClientOnly>
           <Carousel
-            class="block lg:hidden"
+            class="block xl:hidden"
             :transition="500"
             :breakpoints="{
               300: {
@@ -559,6 +559,10 @@ onMounted(() => {
                 snapAlign: 'center',
               },
               768: {
+                itemsToShow: 2,
+                snapAlign: 'center',
+              },
+              1024: {
                 itemsToShow: 2,
                 snapAlign: 'center',
               },
@@ -571,7 +575,7 @@ onMounted(() => {
             >
               <figure class="home-why-us-card relative">
                 <div
-                  class="relative flex min-h-[346px] flex-col flex-wrap items-center rounded-xl border border-grey-barrier bg-white p-6"
+                  class="relative flex min-h-[322px] flex-col flex-wrap items-center rounded-xl border border-grey-barrier bg-white p-6"
                 >
                   <component
                     :is="data.icon"
