@@ -249,7 +249,7 @@ onMounted(() => {
 
       <div class="overflow-hidden">
         <h3
-          class="contact-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-3xl xl:text-4xl"
+          class="contact-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-3xl lg:font-extrabold xl:text-4xl xl:font-extrabold"
         >
           Apa Yang Anda Tunggu? Bergabunglah Sekarang!
         </h3>

@@ -419,7 +419,7 @@ onMounted(() => {
       >
         <div class="overflow-hidden">
           <h1
-            class="home-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight"
+            class="home-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:font-extrabold lg:leading-tight xl:text-5xl xl:font-extrabold xl:leading-tight"
           >
             Sambut Era Baru Media Sosial dengan CUIT
           </h1>
@@ -484,7 +484,7 @@ onMounted(() => {
         <section class="basis-1/2 space-y-4">
           <div class="overflow-hidden">
             <h3
-              class="home-section-text-heading text-xl font-extrabold leading-snug lg:text-3xl xl:text-4xl"
+              class="home-section-text-heading text-xl font-extrabold leading-snug lg:text-3xl lg:font-extrabold xl:text-4xl xl:font-extrabold"
             >
               {{ data.title }}
             </h3>
@@ -508,7 +508,7 @@ onMounted(() => {
         class="container mx-auto w-full max-w-screen-xl px-6 py-6 lg:px-20 lg:py-16 2xl:px-10"
       >
         <h3
-          class="mb-8 text-center text-xl font-extrabold lg:mb-12 lg:text-4xl xl:mb-16"
+          class="mb-8 text-center text-xl font-extrabold lg:mb-12 lg:text-4xl lg:font-extrabold xl:mb-16 xl:font-extrabold"
         >
           Mengapa Cuit?
         </h3>
@@ -583,7 +583,7 @@ onMounted(() => {
                   />
 
                   <h5
-                    class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-xl xl:text-2xl"
+                    class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-xl lg:font-extrabold xl:text-2xl xl:font-extrabold"
                   >
                     {{ data.title }}
                   </h5>
@@ -615,7 +615,7 @@ onMounted(() => {
         <nav class="mb-8 space-y-2 md:mb-16 lg:space-y-4">
           <div class="overflow-hidden">
             <h3
-              class="home-experience-text text-center text-xl font-extrabold lg:text-3xl xl:text-4xl"
+              class="home-experience-text text-center text-xl font-extrabold lg:text-3xl lg:font-extrabold xl:text-4xl xl:font-extrabold"
             >
               Apa yang Pengguna Cuit Rasakan?
             </h3>
@@ -677,6 +677,7 @@ onMounted(() => {
                 <h5 class="text-base font-bold text-grey-concencrated">
                   {{ data.author }}
                 </h5>
+
                 <p class="text-base text-baseline-primary">
                   {{ data.username }}
                 </p>
@@ -707,7 +708,7 @@ onMounted(() => {
 
         <div class="overflow-hidden">
           <h3
-            class="home-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-3xl xl:text-4xl"
+            class="home-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-3xl lg:font-extrabold xl:text-4xl xl:font-extrabold"
           >
             Apa Yang Anda Tunggu? Bergabunglah Sekarang!
           </h3>
@@ -778,6 +779,6 @@ onMounted(() => {
 }
 
 .carousel__slide {
-  @apply pr-0 md:pr-6 lg:pr-6 xl:pr-8;
+  @apply md:px-3 lg:px-3 xl:px-4;
 }
 </style>

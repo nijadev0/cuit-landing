@@ -393,7 +393,7 @@ onMounted(() => {
     >
       <div class="overflow-hidden">
         <h1
-          class="verify-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight"
+          class="verify-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:font-extrabold lg:leading-tight xl:text-5xl xl:font-extrabold xl:leading-tight"
         >
           Verifikasi pada Cuit
         </h1>
@@ -435,7 +435,7 @@ onMounted(() => {
       <nav class="mb-8 space-y-4 lg:mb-16">
         <div class="overflow-hidden">
           <h3
-            class="verify-benefit-text text-center text-xl font-extrabold lg:text-4xl"
+            class="verify-benefit-text text-center text-xl font-extrabold lg:text-4xl lg:font-extrabold"
           >
             Keuntungan Verifikasi
           </h3>
@@ -503,7 +503,7 @@ onMounted(() => {
               />
 
               <h5
-                class="mb-2 text-lg font-extrabold text-grey-concencrated lg:mb-1.5 lg:text-xl xl:mb-4 xl:text-2xl"
+                class="mb-2 text-lg font-extrabold text-grey-concencrated lg:mb-1.5 lg:text-xl lg:font-extrabold xl:mb-4 xl:text-2xl xl:font-extrabold"
               >
                 {{ data.title }}
               </h5>
@@ -530,7 +530,7 @@ onMounted(() => {
     >
       <div class="overflow-hidden">
         <h3
-          class="verify-type-text text-center text-xl font-extrabold lg:text-3xl xl:text-4xl"
+          class="verify-type-text text-center text-xl font-extrabold lg:text-3xl lg:font-extrabold xl:text-4xl xl:font-extrabold"
         >
           Macam-Macam Verifikasi di Cuit
         </h3>
@@ -576,7 +576,7 @@ onMounted(() => {
         <section class="basis-1/2 space-y-2 lg:space-y-4">
           <div class="overflow-hidden">
             <h3
-              class="verify-section-text-heading text-xl font-extrabold leading-snug lg:text-3xl xl:text-4xl"
+              class="verify-section-text-heading text-xl font-extrabold leading-snug lg:text-3xl lg:font-extrabold xl:text-4xl xl:font-extrabold"
             >
               {{ data.title }}
             </h3>
@@ -605,7 +605,7 @@ onMounted(() => {
       >
         <div class="overflow-hidden">
           <h3
-            class="verify-step-text text-center text-xl font-extrabold lg:text-3xl xl:text-4xl"
+            class="verify-step-text text-center text-xl font-extrabold lg:text-3xl lg:font-extrabold xl:text-4xl xl:font-extrabold"
           >
             Langkah Proses Verifikasi
           </h3>
@@ -634,7 +634,7 @@ onMounted(() => {
           />
 
           <h5
-            class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-2xl"
+            class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-2xl lg:font-extrabold"
           >
             {{ data.title }}
           </h5>
@@ -675,7 +675,7 @@ onMounted(() => {
               />
 
               <h5
-                class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-2xl"
+                class="mb-4 text-lg font-extrabold text-grey-concencrated lg:text-2xl lg:font-extrabold"
               >
                 {{ data.title }}
               </h5>
@@ -713,7 +713,7 @@ onMounted(() => {
 
       <div class="overflow-hidden">
         <h3
-          class="verify-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-3xl xl:text-4xl"
+          class="verify-join-now-content my-4 text-center text-xl font-extrabold text-grey-concencrated lg:my-8 lg:text-3xl lg:font-extrabold xl:text-4xl xl:font-extrabold"
         >
           Apa Yang Anda Tunggu? Bergabunglah Sekarang!
         </h3>
