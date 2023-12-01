@@ -389,11 +389,11 @@ onMounted(() => {
     />
 
     <div
-      class="container absolute left-1/2 top-1/2 z-10 mx-auto -mt-10 flex h-full w-full max-w-3xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:gap-6"
+      class="container absolute left-1/2 top-1/2 z-10 mx-auto -mt-10 flex h-full w-full max-w-3xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 md:px-16 lg:gap-6"
     >
       <div class="overflow-hidden">
         <h1
-          class="verify-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:font-extrabold lg:leading-tight xl:text-5xl xl:font-extrabold xl:leading-tight"
+          class="verify-hero-item text-center text-2xl font-extrabold leading-tight md:text-3xl lg:text-4xl lg:font-extrabold lg:leading-tight xl:text-5xl xl:font-extrabold xl:leading-tight"
         >
           Verifikasi pada Cuit
         </h1>
@@ -401,7 +401,7 @@ onMounted(() => {
 
       <div class="overflow-hidden">
         <p
-          class="verify-hero-item text-center text-base font-semibold leading-normal text-grey-smooth lg:text-xl xl:text-2xl"
+          class="verify-hero-item text-center text-base font-semibold leading-normal text-grey-smooth md:text-lg lg:text-xl xl:text-2xl"
         >
           Akses fitur Cuit lebih lengkap di tangan Anda hanya dengan sekali
           proses verifikasi. Buka kesempatan baru untuk berkolaborasi dengan
@@ -413,12 +413,12 @@ onMounted(() => {
         class="flex flex-row items-center justify-center gap-4 overflow-hidden"
       >
         <NuxtImg
-          class="verify-hero-item h-auto w-28 lg:w-40 xl:w-44"
+          class="verify-hero-item h-auto w-28 md:w-32 lg:w-40 xl:w-44"
           src="/download-google-play.png"
           alt="Download Google Play"
         />
         <NuxtImg
-          class="verify-hero-item h-auto w-28 lg:w-40 xl:w-44"
+          class="verify-hero-item h-auto w-28 md:w-32 lg:w-40 xl:w-44"
           src="/download-app-store.png"
           alt="Download App Store"
         />
@@ -430,12 +430,12 @@ onMounted(() => {
   <!-- ------------------------------------ START - Benefit ------------------------------------ -->
   <section id="verify-benefit" class="relative my-4 py-8 lg:my-8 lg:py-16">
     <div
-      class="container mx-auto w-full max-w-screen-xl px-6 lg:px-20 2xl:px-10"
+      class="container mx-auto w-full max-w-screen-xl px-6 md:px-16 lg:px-20 2xl:px-10"
     >
       <nav class="mb-8 space-y-4 lg:mb-16">
         <div class="overflow-hidden">
           <h3
-            class="verify-benefit-text text-center text-xl font-extrabold lg:text-4xl lg:font-extrabold"
+            class="verify-benefit-text text-center text-xl font-extrabold md:text-2xl lg:text-4xl lg:font-extrabold"
           >
             Keuntungan Verifikasi
           </h3>
@@ -530,7 +530,7 @@ onMounted(() => {
     >
       <div class="overflow-hidden">
         <h3
-          class="verify-type-text text-center text-xl font-extrabold lg:text-3xl lg:font-extrabold xl:text-4xl xl:font-extrabold"
+          class="verify-type-text text-center text-xl font-extrabold md:text-2xl lg:text-3xl lg:font-extrabold xl:text-4xl xl:font-extrabold"
         >
           Macam-Macam Verifikasi di Cuit
         </h3>
@@ -555,7 +555,7 @@ onMounted(() => {
       ]"
     >
       <div
-        class="container mx-auto flex w-full max-w-screen-xl items-center justify-between gap-8 px-6 py-6 lg:gap-0 lg:px-20 lg:py-16 2xl:px-10"
+        class="container mx-auto flex w-full max-w-screen-xl items-center justify-between gap-8 px-6 py-6 md:px-16 lg:gap-0 lg:px-20 lg:py-16 2xl:px-10"
         :class="[
           data.direction === 'left'
             ? 'flex-col lg:flex-row'
@@ -598,7 +598,7 @@ onMounted(() => {
   <!-- ------------------------------------ START - Step Verification ------------------------------------ -->
   <section id="verify-step" class="relative my-4 py-8 lg:my-8 lg:py-16">
     <div
-      class="container mx-auto w-full max-w-screen-xl px-6 lg:px-20 2xl:px-10"
+      class="container mx-auto w-full max-w-screen-xl px-6 md:px-16 lg:px-20 2xl:px-10"
     >
       <nav
         class="mb-8 flex flex-col items-center justify-center gap-4 lg:mb-16"
@@ -701,7 +701,7 @@ onMounted(() => {
     class="relative my-4 mb-6 py-8 lg:my-8 lg:py-16"
   >
     <div
-      class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"
+      class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 md:px-16 lg:px-20 2xl:px-10"
     >
       <div class="overflow-hidden">
         <NuxtImg

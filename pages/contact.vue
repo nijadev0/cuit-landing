@@ -47,10 +47,6 @@ onMounted(() => {
         duration: 2.5,
         ease: "power2",
         delay: index * 0.25,
-        scrollTrigger: {
-          trigger: "#contact-form",
-          start: "top center",
-        },
       },
     );
   });
@@ -120,17 +116,17 @@ onMounted(() => {
     />
 
     <div
-      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:-mt-20 lg:gap-5 xl:gap-6"
+      class="container absolute left-1/2 top-1/2 z-10 mx-auto flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 md:px-16 lg:-mt-20 lg:gap-5 xl:gap-6"
     >
       <div class="overflow-hidden">
         <h1
-          class="contact-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:font-extrabold lg:leading-tight xl:text-5xl xl:font-extrabold xl:leading-tight"
+          class="contact-hero-item text-center text-2xl font-extrabold leading-tight md:text-3xl lg:text-4xl lg:font-extrabold lg:leading-tight xl:text-5xl xl:font-extrabold xl:leading-tight"
         >
           Hubungi Kami
         </h1>
       </div>
 
-      <div class="overflow-hidden">
+      <div class="overflow-hidden lg:pb-10 xl:pb-10 2xl:pb-0">
         <p
           class="contact-hero-item max-w-xs text-center text-base font-semibold text-grey-smooth lg:max-w-3xl lg:text-xl xl:text-2xl"
         >
@@ -145,7 +141,7 @@ onMounted(() => {
   <!-- ------------------------------------ START - Form ------------------------------------ -->
   <section
     id="contact-form"
-    class="relative z-20 -mt-5 md:-mt-20 lg:-mt-56 xl:-mt-56 2xl:-mt-96"
+    class="relative z-20 -mt-5 md:-mt-20 lg:-mt-40 xl:-mt-56 2xl:-mt-96"
   >
     <div
       class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"
@@ -237,7 +233,7 @@ onMounted(() => {
     class="relative my-6 mb-8 py-8 lg:my-8 lg:py-16"
   >
     <div
-      class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"
+      class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 md:px-16 lg:px-20 2xl:px-10"
     >
       <div class="overflow-hidden">
         <NuxtImg

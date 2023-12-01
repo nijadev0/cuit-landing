@@ -415,11 +415,11 @@ onMounted(() => {
 
       <div
         id="home-hero"
-        class="container absolute left-1/2 top-1/2 z-10 mx-auto -mt-0 flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 lg:-mt-20 lg:gap-6"
+        class="container absolute left-1/2 top-1/2 z-10 mx-auto -mt-0 flex h-full w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-4 px-6 md:px-16 lg:-mt-20 lg:gap-6 lg:px-0"
       >
         <div class="overflow-hidden">
           <h1
-            class="home-hero-item text-center text-2xl font-extrabold leading-tight lg:text-4xl lg:font-extrabold lg:leading-tight xl:text-5xl xl:font-extrabold xl:leading-tight"
+            class="home-hero-item text-center text-2xl font-extrabold leading-tight md:text-3xl lg:text-4xl lg:font-extrabold lg:leading-tight xl:text-5xl xl:font-extrabold xl:leading-tight"
           >
             Sambut Era Baru Media Sosial dengan CUIT
           </h1>
@@ -427,7 +427,7 @@ onMounted(() => {
 
         <div class="overflow-hidden">
           <p
-            class="home-hero-item text-center text-base font-semibold leading-normal text-grey-smooth lg:text-xl xl:text-2xl"
+            class="home-hero-item text-center text-base font-semibold leading-normal text-grey-smooth md:text-lg lg:text-xl xl:text-2xl"
           >
             Temukan komunitasmu, bagikan sudut pandangmu, dan jadilah bagian
             dari era baru sosial media di Indonesia!
@@ -439,7 +439,7 @@ onMounted(() => {
         >
           <NuxtLink href="/" class="home-hero-item">
             <NuxtImg
-              class="h-auto w-28 lg:w-40 xl:w-44"
+              class="h-auto w-28 md:w-32 lg:w-40 xl:w-44"
               src="/download-google-play.png"
               alt="Download Google Play"
             />
@@ -447,7 +447,7 @@ onMounted(() => {
 
           <NuxtLink href="/" class="home-hero-item">
             <NuxtImg
-              class="h-auto w-28 lg:w-40 xl:w-44"
+              class="h-auto w-28 md:w-32 lg:w-40 xl:w-44"
               src="/download-app-store.png"
               alt="Download App Store"
             />
@@ -467,7 +467,7 @@ onMounted(() => {
       ]"
     >
       <div
-        class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-between gap-8 px-6 py-6 lg:gap-0 lg:px-20 lg:py-16 2xl:px-10"
+        class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-between gap-8 px-6 py-6 md:px-16 lg:gap-0 lg:px-20 lg:py-16 2xl:px-10"
         :class="[
           data.direction === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse',
         ]"
@@ -505,10 +505,10 @@ onMounted(() => {
     <!-- ------------------------------------ START - Why Choose Us ------------------------------------ -->
     <section class="home-why-us relative py-4 lg:py-8">
       <div
-        class="container mx-auto w-full max-w-screen-xl px-6 py-6 lg:px-20 lg:py-16 2xl:px-10"
+        class="container mx-auto w-full max-w-screen-xl px-6 py-6 md:px-16 lg:px-20 lg:py-16 2xl:px-10"
       >
         <h3
-          class="mb-8 text-center text-xl font-extrabold lg:mb-12 lg:text-4xl lg:font-extrabold xl:mb-16 xl:font-extrabold"
+          class="mb-8 text-center text-xl font-extrabold md:text-2xl lg:mb-12 lg:text-4xl lg:font-extrabold xl:mb-16 xl:font-extrabold"
         >
           Mengapa Cuit?
         </h3>
@@ -575,7 +575,7 @@ onMounted(() => {
             >
               <figure class="home-why-us-card relative">
                 <div
-                  class="relative flex min-h-[322px] flex-col flex-wrap items-center rounded-xl border border-grey-barrier bg-white p-6"
+                  class="relative flex min-h-[322px] flex-col flex-wrap items-center rounded-xl border border-grey-barrier bg-white p-6 md:min-h-[370px]"
                 >
                   <component
                     :is="data.icon"
@@ -610,12 +610,12 @@ onMounted(() => {
       class="relative my-4 bg-grey-footer py-6 lg:my-8 lg:py-16"
     >
       <div
-        class="container mx-auto w-full max-w-screen-xl px-6 py-8 lg:px-20 lg:py-16 2xl:px-10"
+        class="container mx-auto w-full max-w-screen-xl px-6 py-8 md:px-16 lg:px-20 lg:py-16 2xl:px-10"
       >
         <nav class="mb-8 space-y-2 md:mb-16 lg:space-y-4">
           <div class="overflow-hidden">
             <h3
-              class="home-experience-text text-center text-xl font-extrabold lg:text-3xl lg:font-extrabold xl:text-4xl xl:font-extrabold"
+              class="home-experience-text text-center text-xl font-extrabold md:text-2xl lg:text-3xl lg:font-extrabold xl:text-4xl xl:font-extrabold"
             >
               Apa yang Pengguna Cuit Rasakan?
             </h3>
@@ -636,19 +636,19 @@ onMounted(() => {
             :breakpoints="{
               300: {
                 itemsToShow: 1,
-                snapAlign: 'center',
+                snapAlign: 'start',
               },
               768: {
                 itemsToShow: 2,
-                snapAlign: 'center',
+                snapAlign: 'start',
               },
               1024: {
                 itemsToShow: 3,
-                snapAlign: 'center',
+                snapAlign: 'start',
               },
               1280: {
                 itemsToShow: 3,
-                snapAlign: 'center',
+                snapAlign: 'start',
               },
             }"
           >
@@ -696,7 +696,7 @@ onMounted(() => {
     <!-- ------------------------------------ END - Join Now ------------------------------------ -->
     <section class="home-join-now relative my-4 py-8 lg:my-8 lg:py-16">
       <div
-        class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 lg:px-20 2xl:px-10"
+        class="container mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center px-6 md:px-16 lg:px-20 2xl:px-10"
       >
         <div class="overflow-hidden">
           <NuxtImg

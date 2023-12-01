@@ -13,7 +13,7 @@ import {
   <!-- ------------------------------------ START - Footer ------------------------------------ -->
   <footer class="relative bg-grey-footer py-6 lg:py-20">
     <div
-      class="container mx-auto flex w-full max-w-screen-xl flex-col items-start justify-between gap-10 px-6 lg:flex-row lg:items-center lg:gap-0 lg:px-20 2xl:px-10"
+      class="container mx-auto flex w-full max-w-screen-xl flex-col items-start justify-between gap-10 px-6 md:px-16 lg:flex-row lg:items-center lg:gap-0 lg:px-20 2xl:px-10"
     >
       <!-- Brand -->
       <div class="flex flex-col items-start gap-8">
@@ -122,13 +122,13 @@ import {
         <NuxtImg
           src="/download-google-play.png"
           alt="Download Google Play"
-          class="h-auto w-28 lg:w-32"
+          class="h-auto w-28 md:w-32"
         />
 
         <NuxtImg
           src="/download-app-store.png"
           alt="Download App Store"
-          class="h-auto w-28 lg:w-32"
+          class="h-auto w-28 md:w-32"
         />
       </nav>
 

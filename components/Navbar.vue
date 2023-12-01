@@ -17,15 +17,15 @@ const closeMobileMenu = () => {
 <template>
   <!-- ------------------------------------ START - Navbar ------------------------------------ -->
   <nav
-    class="fixed inset-0 top-0 z-50 flex h-14 w-full items-center bg-white shadow-1 lg:h-20 lg:py-7"
+    class="fixed inset-0 top-0 z-50 flex h-14 w-full items-center bg-white shadow-1 md:h-16 lg:h-20 lg:py-7"
   >
     <div
-      class="container mx-auto flex w-full max-w-screen-xl items-center justify-between px-6 lg:px-20 2xl:px-10"
+      class="container mx-auto flex w-full max-w-screen-xl items-center justify-between px-6 md:px-16 lg:px-20 2xl:px-10"
     >
       <!-- Logo -->
       <nav class="flex basis-1/2 self-start lg:basis-1/3">
         <NuxtLink to="/">
-          <NuxtImg class="h-6 w-auto lg:h-7 xl:h-8" src="/cuit-logo.png" />
+          <NuxtImg class="h-6 w-auto md:h-7 xl:h-8" src="/cuit-logo.png" />
         </NuxtLink>
       </nav>
 
@@ -69,11 +69,15 @@ const closeMobileMenu = () => {
 
       <nav class="flex basis-1/2 items-end justify-end lg:hidden">
         <button v-if="show_mobile_menu === false" @click="toggleMobileMenu">
-          <ListLineIcon class="h-6 w-6 -scale-x-100 text-grey-concencrated" />
+          <ListLineIcon
+            class="h-6 w-6 -scale-x-100 text-grey-concencrated md:h-8 md:w-8"
+          />
         </button>
 
         <button v-else @click="toggleMobileMenu">
-          <CloseCircleLineIcon class="h-6 w-6 text-grey-concencrated" />
+          <CloseCircleLineIcon
+            class="h-6 w-6 text-grey-concencrated md:h-8 md:w-8"
+          />
         </button>
       </nav>
     </div>
@@ -94,25 +98,28 @@ const closeMobileMenu = () => {
       class="fixed left-0 top-14 z-50 h-[calc(100vh_-_56px)] w-full bg-white p-6"
     >
       <div class="mb-14 flex flex-col items-start gap-4 md:items-center">
-        <span @click="closeMobileMenu">
-          <NuxtLink to="/">Beranda</NuxtLink>
-        </span>
-        <span @click="closeMobileMenu">
-          <NuxtLink to="/verification">Verifikasi</NuxtLink>
-        </span>
+        <button type="button" @click="closeMobileMenu">
+          <NuxtLink class="text-base md:text-lg" to="/">Beranda</NuxtLink>
+        </button>
+
+        <button type="button" @click="closeMobileMenu">
+          <NuxtLink class="text-base md:text-lg" to="/verification"
+            >Verifikasi</NuxtLink
+          >
+        </button>
       </div>
 
       <div class="flex flex-row items-center gap-4">
         <NuxtLink
           to="/login"
-          class="w-full rounded-lg border border-baseline-primary px-6 py-2 text-center text-baseline-primary"
+          class="w-full rounded-lg border border-baseline-primary px-6 py-2 text-center text-base text-baseline-primary md:text-lg"
         >
           Masuk
         </NuxtLink>
 
         <NuxtLink
           to="/register"
-          class="w-full rounded-lg bg-baseline-primary px-6 py-2 text-center text-white"
+          class="w-full rounded-lg bg-baseline-primary px-6 py-2 text-center text-base text-white md:text-lg"
         >
           Daftar
         </NuxtLink>
