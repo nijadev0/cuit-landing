@@ -95,8 +95,8 @@ onMounted(() => {
       >
         <h1 align="center">Data Privacy Policy</h1>
         <p align="center">
-          Version: 1.1 Date: <br />
-          June 8, 2023
+          Version: 1.0 Date: <br />
+          December 28, 2023
         </p>
 
         <h2>INTRODUCTION</h2>
