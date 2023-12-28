@@ -28,6 +28,19 @@ onMounted(() => {
       },
     );
   });
+
+  //--------------------------------------------------------------------------------------------------------------//
+  // Table Responsive
+  //--------------------------------------------------------------------------------------------------------------//
+  const tables = document.querySelectorAll("table");
+  tables.forEach((table) => {
+    const tableWrapper = document.createElement("div");
+    tableWrapper.classList.add("table-wrapper");
+
+    const parentNode = table.parentNode;
+    parentNode.insertBefore(tableWrapper, table);
+    tableWrapper.appendChild(table);
+  });
 });
 //--------------------------------------------------------------------------------------------------------------//
 </script>
@@ -716,7 +729,12 @@ onMounted(() => {
 }
 
 .policy-content table {
-  @apply mx-10 mb-4;
+  @apply mb-4 w-full;
+}
+
+.policy-content >>> .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
 }
 
 .policy-content tr {
